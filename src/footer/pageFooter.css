@@ -1,0 +1,16 @@
+.PageFooter {
+    border-top: solid 1px darkgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    /* what's going ong with the padding-top */
+    padding-top: 200x;
+}
+
+/* update how I'm selecting the image */
+img {
+    width: 25px;
+    height: 25px;
+}
