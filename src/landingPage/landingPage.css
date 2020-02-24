@@ -1,0 +1,19 @@
+.methodology-cards {
+    border: darkblue solid 1px;
+    max-width: 80vw;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+@media (min-width: 1024px) {
+    .methodology {
+        width: 95vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .methodology-cards {
+        width: 25vw;
+    }
+}

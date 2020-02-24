@@ -2,18 +2,21 @@ import React from 'react';
 import {Route, Link} from 'react-router-dom';
 import LandingPage from './landingPage/landingPage';
 import MainUserPage from './mainUserPage/mainUserPage';
+import ErrorBoundary from './errorBoundary';
 
 function App() {
   return (
     <main className='App'>
-      <Route
-        exact path = '/'
-        component={LandingPage}
-      />
-      <Route
-        exact path = '/:userId'
-        component={MainUserPage}
-      />
+      <ErrorBoundary>
+        <Route
+          exact path = '/'
+          component={LandingPage}
+        />
+        <Route
+          exact path = '/user1'
+          component={MainUserPage}
+        />
+      </ErrorBoundary>
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import'./pageNav.css';
+import { Link } from 'react-router-dom';
 
 class PageNav extends React.Component {
     constructor(props) {
@@ -9,15 +10,12 @@ class PageNav extends React.Component {
 
     render() {
         return (
-            <nav>
-                <section> 
-                    part 1                   
+            <nav class="PageNav">
+                <section>
+                    <Link to='/'>Relentless</Link>                   
                 </section>
                 <section> 
-                    part 2                   
-                </section>
-                <section> 
-                    part 3                   
+                    <Link to='/user1'>User1</Link>
                 </section>
             </nav>
         )

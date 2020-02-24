@@ -15,10 +15,16 @@ class GoalsDashboard extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>Consecutive Weeks</p>
-                <p>Weekly Goals Completion</p>
-                <p>YTD Goals Accomplishment</p> 
+            <div className="dashboard">
+                <div className="dashboard-cards">
+                    Consecutive Weeks: 5
+                </div>
+                <div className="dashboard-cards">
+                    Weekly Goals Completion: 1/3
+                </div>
+                <div className="dashboard-cards">
+                    YTD Accomplishment: 23/45
+                </div> 
             </div>
         )
     }

@@ -1,0 +1,15 @@
+.PageNav {
+    border-bottom: solid 1px darkgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+/* update how I'm selecting the image */
+img {
+    width: 25px;
+    height: 25px;
+}

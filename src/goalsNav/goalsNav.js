@@ -9,7 +9,7 @@ class GoalsNav extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="GoalsNav">
                 <button>Annual</button>
                 <button>Monthly</button>
                 <button>Weekly</button> 

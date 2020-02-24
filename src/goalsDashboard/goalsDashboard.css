@@ -1,0 +1,19 @@
+.dashboard-cards {
+    border: darkblue solid 1px;
+    max-width: 80vw;
+    margin: 2px auto;
+    padding: 5px;
+}
+
+@media (min-width: 1024px) {
+    .dashboard {
+        width: 95vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .dashboard-cards {
+        width: 25vw;
+    }
+}
