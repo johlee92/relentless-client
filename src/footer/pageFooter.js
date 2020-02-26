@@ -9,7 +9,6 @@ import githubIcon from '../images/GitHub.png';
 class PageFooter extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
     }
 
     render() {

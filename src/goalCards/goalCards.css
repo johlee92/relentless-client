@@ -1,0 +1,10 @@
+.goal-cards {
+    border: darkblue solid 1px;
+    max-width: 80vw;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.goal-cards > div > button:hover{
+    cursor: pointer;
+}

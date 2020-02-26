@@ -1,5 +1,6 @@
 import React from 'react';
 import'./goals.css';
+import GoalCards from '../goalCards/goalCards';
 
 class Goals extends React.Component {
     constructor(props) {
@@ -8,11 +9,13 @@ class Goals extends React.Component {
     }
 
     render() {
+        const goalList = this.props.currentGoals.map((goal) => {
+            return <GoalCards goal={goal}/>
+        });
+
         return (
             <div>
-                <div>Goal 1</div>
-                <div>Goal 2</div>
-                <div>Goal 3</div>
+                {goalList}
             </div>
         )
     }

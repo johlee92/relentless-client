@@ -5,6 +5,10 @@
     padding: 5px;
 }
 
+.methodology-cards:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 1024px) {
     .methodology {
         width: 95vw;

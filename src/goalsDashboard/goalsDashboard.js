@@ -4,7 +4,6 @@ import'./goalsDashboard.css';
 class GoalsDashboard extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
     }
 
     //need to collect the data and sum up key results
@@ -13,12 +12,14 @@ class GoalsDashboard extends React.Component {
     //show the # of goals completed over YTD period 
     //user should be able to interact with the KPIs
 
+    //dropped the consecutive weeks functionality. need to talk to mentor about it.
+
     render() {
         return (
             <div className="dashboard">
-                <div className="dashboard-cards">
+                {/* <div className="dashboard-cards">
                     Consecutive Weeks: 5
-                </div>
+                </div> */}
                 <div className="dashboard-cards">
                     Weekly Goals Completion: 1/3
                 </div>
