@@ -5,28 +5,31 @@ import moment from 'moment';
 class GoalsNav extends React.Component {
     constructor(props) {
         super(props);
-
-        //need a way to determine, consistently, how to return the number of weeks in any given eyar
+        //need a way to determine, consistently, how to return the number of weeks in any given year
         let weekNumEOY = moment(moment().endOf('year')).week();
-        
-        this.state = {
-            yearWeekNum: ''
-        }
     }
+
+    // componentDidUpdate() {
+    //     console.log(this.props);
+    //     console.log(this.props.yearNum)
+    //     console.log(moment(`${this.props.yearNum}`))
+    //     console.log(moment(this.props.yearNum).add(this.props.weekNum, 'weeks').endOf('week'))
+    //     console.log(moment(this.props.yearNum).add(this.props.weekNum - 1, 'weeks'))
+    // }
 
     render() {
         return (
             <div className="GoalsNavSection">
                 <div className="GoalsNav">
                     <button
-                        value={this.props.weekNum - 1}
+                        value={moment(`${this.props.yearNum}`).add(this.props.weekNum - 2, 'weeks').endOf('week').format('DD MM YYYY')}
                         onClick={this.props.changeWeekNum}
                     >
                         Previous Week
                     </button>
                     <span>Week: {this.props.weekNum}</span>
                     <button 
-                        value={this.props.weekNum + 1}
+                        value={moment(`${this.props.yearNum}`).add(this.props.weekNum, 'weeks').endOf('week').format('DD MM YYYY')}
                         onClick={this.props.changeWeekNum}
                     >
                         Next Week

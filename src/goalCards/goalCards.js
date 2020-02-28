@@ -4,12 +4,20 @@ import'./goalCards.css';
 class GoalCards extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(props);
     }
+
+    statusChange = () => {
+        
+    }
+
 
     render() {
         let statusGoal = 'Incomplete';
-        if (this.props.goal.complete.toLowerCase() === 'true') {
+        // need to talk to mentor about why the below code doesn't work
+        // const completeString = this.props.goal.complete;
+        // console.log(typeof completeString); // this returns 'string'
+        // console.log(completeString.toLowerCase()); // why doesn't this work?
+        if (this.props.goal.complete === 'true') {
             statusGoal = 'Complete'
         }
 
@@ -17,7 +25,7 @@ class GoalCards extends React.Component {
             <div className="goal-cards">
                 {this.props.goal.content}
                 <div>
-                    <button>Status: {statusGoal}</button>
+                    <button >Status: {statusGoal}</button>
                     <button>Edit</button>
                 </div>
             </div>
