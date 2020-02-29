@@ -9,7 +9,10 @@ class Goals extends React.Component {
 
     render() {
         const goalList = this.props.currentGoals.map((goal) => {
-            return <GoalCards goal={goal}/>
+            return <GoalCards 
+                goal={goal}
+                viewGoals={this.props.viewGoals}
+            />
         });
 
         return (

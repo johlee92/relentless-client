@@ -7,6 +7,7 @@ import Goals from '../goals/goals';
 import PageFooter from '../footer/pageFooter';
 import moment from 'moment';
 import GoalsContext from '../GoalsContext';
+import config from '../config';
 
 //import dummy data into the main user page
 import dummyGoals from '../dummyGoals';
@@ -63,7 +64,7 @@ class MainUserPage extends React.Component {
     }
 
     goalsFetch = () => {
-        const url = 'http://localhost:8000';
+        const url = `${config.API_ENDPOINT}`;
         const options = {
             method: 'GET',
             headers: {
@@ -134,8 +135,14 @@ class MainUserPage extends React.Component {
     }
 
     render() {
-        const {annual_goals, monthly_goals, weekly_goals, weekNum, yearNum} = this.state;
+        const {annual_goals, monthly_goals, weekly_goals, weekNum, yearNum, viewGoals} = this.state;
         let currentGoals;
+        let currentWeekGoals = weekly_goals.filter(
+            goal => ( 
+                moment(goal.date_created).week() === this.state.weekNum &&
+                moment(goal.date_created).month() === this.state.monthNum &&
+                moment(goal.date_created).year() === this.state.yearNum 
+        ));
 
         //should the below be refactored into a different area
         if (this.state.viewGoals.toLowerCase() === 'weekly') {
@@ -153,7 +160,8 @@ class MainUserPage extends React.Component {
             ));
         } else {
             currentGoals = annual_goals.filter(
-                goal => moment(goal.date_created).year() === this.state.yearNum
+                //need to undersatnd why it's returning 2019
+                goal => moment(goal.date_created).add(1, 'weeks').year() === this.state.yearNum
             );
         }
 
@@ -165,7 +173,12 @@ class MainUserPage extends React.Component {
             <div>
                 <GoalsContext.Provider value={contextValue}>
                     <PageNav/>
-                    <GoalsDashboard/>
+                    <GoalsDashboard
+                        annual_goals={annual_goals}
+                        monthly_goals={monthly_goals}
+                        weekly_goals={weekly_goals}
+                        currentWeekGoals={currentWeekGoals}
+                    />
                     <GoalsNav
                         weekNum={weekNum}
                         yearNum={yearNum}
@@ -174,6 +187,7 @@ class MainUserPage extends React.Component {
                     />
                     <Goals
                         currentGoals={currentGoals}
+                        viewGoals={viewGoals}
                     />
                     <PageFooter/>
                 </GoalsContext.Provider>

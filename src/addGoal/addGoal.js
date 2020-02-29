@@ -75,7 +75,7 @@ class AddGoal extends Component {
         return (
         <div className="addGoal">
             <h2>Add Goal</h2>
-            
+             
             <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
             <label htmlFor="content">Goal:</label>
             <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
