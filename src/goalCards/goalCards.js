@@ -5,7 +5,6 @@ import config from '../config';
 class GoalCards extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
     }
 
     // static contextType = GoalsContext;
