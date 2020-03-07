@@ -5,17 +5,7 @@ import moment from 'moment';
 class GoalsNav extends React.Component {
     constructor(props) {
         super(props);
-        //need a way to determine, consistently, how to return the number of weeks in any given year
-        let weekNumEOY = moment(moment().endOf('year')).week();
     }
-
-    // componentDidUpdate() {
-    //     console.log(this.props);
-    //     console.log(this.props.yearNum)
-    //     console.log(moment(`${this.props.yearNum}`))
-    //     console.log(moment(this.props.yearNum).add(this.props.weekNum, 'weeks').endOf('week'))
-    //     console.log(moment(this.props.yearNum).add(this.props.weekNum - 1, 'weeks'))
-    // }
 
     render() {
         return (

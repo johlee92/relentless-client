@@ -1,16 +1,14 @@
 import React from 'react';
-import'./mainUserPage.css';
+import config from '../config';
+import moment from 'moment';
 import PageNav from '../nav/pageNav';
 import GoalsDashboard from '../goalsDashboard/goalsDashboard';
 import GoalsNav from '../goalsNav/goalsNav';
 import Goals from '../goals/goals';
+import AddGoal from '../addGoal/addGoal';
 import PageFooter from '../footer/pageFooter';
-import moment from 'moment';
 import GoalsContext from '../GoalsContext';
-import config from '../config';
-
-//import dummy data into the main user page
-import dummyGoals from '../dummyGoals';
+import'./mainUserPage.css';
 
 class MainUserPage extends React.Component {
     constructor(props) {
@@ -24,7 +22,10 @@ class MainUserPage extends React.Component {
             monthNum: 0,
             yearNum: 0,
             //defaults the view for the user to the weekly view
-            viewGoals: 'weekly'
+            viewGoals: 'weekly',
+            //display mechanisms for the goals or add goals sections
+            displayAddGoal: 'none',
+            displayGoals: 'block'
         }
     }
 
@@ -63,6 +64,20 @@ class MainUserPage extends React.Component {
         // console.log(this.state.viewGoals)
     }
 
+    changeDisplayAddGoals = () => {
+        if (this.state.displayAddGoal === 'none') {
+            this.setState({
+                displayGoals: 'none',
+                displayAddGoal: 'block'
+            })
+        } else  {
+            this.setState({
+                displayGoals: 'block',
+                displayAddGoal: 'none'
+            })
+        }
+    }
+
     goalsFetch = () => {
         const url = `${config.API_ENDPOINT}`;
         const options = {
@@ -71,7 +86,7 @@ class MainUserPage extends React.Component {
                 "Content-Type": "application/json"
             }
         };
-    
+        // debugger;
         fetch(url + '/api/annualGoals', options)
             .then(res => {
                 if(!res.ok) {
@@ -81,7 +96,7 @@ class MainUserPage extends React.Component {
             })
             .then(res => res.json())
             .then(data => {
-                // console.log(typeof moment(data[0].date_created).year())
+                // debugger;
                 this.setState({
                     annual_goals: data,
                     error: null
@@ -136,7 +151,7 @@ class MainUserPage extends React.Component {
 
     render() {
         const {annual_goals, monthly_goals, weekly_goals, weekNum, yearNum, viewGoals} = this.state;
-        let currentGoals;
+        
         let currentWeekGoals = weekly_goals.filter(
             goal => ( 
                 moment(goal.date_created).week() === this.state.weekNum &&
@@ -144,28 +159,25 @@ class MainUserPage extends React.Component {
                 moment(goal.date_created).year() === this.state.yearNum 
         ));
 
-        //should the below be refactored into a different area
-        if (this.state.viewGoals.toLowerCase() === 'weekly') {
-            currentGoals = weekly_goals.filter(
-                goal => ( 
-                    moment(goal.date_created).week() === this.state.weekNum &&
-                    moment(goal.date_created).month() === this.state.monthNum &&
-                    moment(goal.date_created).year() === this.state.yearNum 
-            ));
-        } else if (this.state.viewGoals.toLowerCase() === 'monthly') {
-            currentGoals = monthly_goals.filter(
-                goal => (
-                    moment(goal.date_created).month() === this.state.monthNum &&
-                    moment(goal.date_created).year() === this.state.yearNum
-            ));
-        } else {
-            currentGoals = annual_goals.filter(
-                //need to undersatnd why it's returning 2019
-                goal => moment(goal.date_created).add(1, 'weeks').year() === this.state.yearNum
-            );
+        let currentMonthGoals = monthly_goals.filter(
+            goal => (
+                moment(goal.date_created).month() === this.state.monthNum &&
+                moment(goal.date_created).year() === this.state.yearNum
+        ));
+
+        let currentAnnualGoals = annual_goals.filter(
+            //need to undersatnd why it's returning 2019
+            goal => moment(goal.date_created).add(1, 'weeks').year() === this.state.yearNum
+        );
+
+        let currentGoals = {
+            annualGoals: currentAnnualGoals,
+            monthlyGoals: currentMonthGoals,
+            weeklyGoals: currentWeekGoals
         }
 
         const contextValue = {
+            currentGoals: currentGoals,
             goalsFetch: this.goalsFetch,
         }
 
@@ -177,7 +189,7 @@ class MainUserPage extends React.Component {
                         annual_goals={annual_goals}
                         monthly_goals={monthly_goals}
                         weekly_goals={weekly_goals}
-                        currentWeekGoals={currentWeekGoals}
+                        currentWeekGoals={currentGoals.weeklyGoals}
                     />
                     <GoalsNav
                         weekNum={weekNum}
@@ -185,10 +197,25 @@ class MainUserPage extends React.Component {
                         changeWeekNum={this.changeWeekNum}
                         changeViewGoals={this.changeViewGoals}
                     />
-                    <Goals
-                        currentGoals={currentGoals}
-                        viewGoals={viewGoals}
-                    />
+                    <button 
+                        style={{display:this.state.displayGoals}}
+                        onClick={this.changeDisplayAddGoals}
+                    >
+                        Add Goals
+                    </button>
+                    <span style={{display:this.state.displayGoals}}>
+                        <Goals
+                            currentGoals={currentGoals}
+                            viewGoals={viewGoals}
+                        />
+                    </span>
+                    <span style={{display:this.state.displayAddGoal}}>
+                        <AddGoal
+                            viewGoals={viewGoals}
+                            currentGoals={currentGoals}
+                            changeDisplayAddGoals={this.changeDisplayAddGoals}
+                        />
+                    </span>
                     <PageFooter/>
                 </GoalsContext.Provider>
             </div>

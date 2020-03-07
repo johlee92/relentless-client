@@ -1,19 +1,28 @@
 import React from 'react';
 import'./goalCards.css';
 import config from '../config';
+import GoalsContext from '../GoalsContext';
 
 class GoalCards extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    // static contextType = GoalsContext;
+    // check this to make sure I don't need it
+    static contextType = GoalsContext;
+    componentDidMount() {
+        // console.log(this.context);
+        // console.log(this.context.goalsFetch);
+    }
 
     statusChange = () => {
         const url = `${config.API_ENDPOINT}`;
         let newGoalComplete = {
-            complete: !(this.props.goal.complete)
+            //why must I convert the option into a string for this to work?
+            complete: `${!(this.props.goal.complete)}`
         }
+
+        console.log(JSON.stringify(newGoalComplete))
 
         const options = {
             method: 'PATCH',
@@ -23,7 +32,7 @@ class GoalCards extends React.Component {
             }
         };
 
-        if(this.props.viewGoals === 'annual') {
+        if(this.props.viewGoals.toLowerCase() === 'annual') {
             fetch(url + '/api/annualGoals/' + `${this.props.goal.id}`, options)
                 .then(res => {
                     if(!res.ok) {
@@ -31,9 +40,7 @@ class GoalCards extends React.Component {
                     }
                 return res;
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log('data updated');
+                .then(res => {
                     this.context.goalsFetch();
                 })
                 .catch(err => {
@@ -43,7 +50,7 @@ class GoalCards extends React.Component {
             });
         }
         
-        if(this.props.viewGoals === 'monthly') {
+        if(this.props.viewGoals.toLowerCase() === 'monthly') {
             fetch(url + '/api/monthlyGoals/' + `${this.props.goal.id}`, options)
                 .then(res => {
                     if(!res.ok) {
@@ -51,8 +58,7 @@ class GoalCards extends React.Component {
                     }
                 return res;
                 })
-                .then(res => res.json())
-                .then(data => {
+                .then(res => {
                     this.context.goalsFetch();
                 })
                 .catch(err => {
@@ -62,7 +68,7 @@ class GoalCards extends React.Component {
             });
         }
 
-        if(this.props.viewGoals === 'weekly') {
+        if(this.props.viewGoals.toLowerCase() === 'weekly') {
             fetch(url + '/api/weeklyGoals/' + `${this.props.goal.id}`, options)
                 .then(res => {
                     if(!res.ok) {
@@ -70,8 +76,7 @@ class GoalCards extends React.Component {
                     }
                 return res;
                 })
-                .then(res => res.json())
-                .then(data => {
+                .then(res => {
                     this.context.goalsFetch();
                 })
                 .catch(err => {
@@ -88,6 +93,8 @@ class GoalCards extends React.Component {
         // const completeString = this.props.goal.complete;
         // console.log(typeof completeString); // this returns 'string'
         // console.log(completeString.toLowerCase()); // why doesn't this work?
+        // console.log(this.props.goal.complete);
+        // console.log(this.props.goal.complete.toLowerCase());
         if (this.props.goal.complete) {
             statusGoal = 'Complete'
         }

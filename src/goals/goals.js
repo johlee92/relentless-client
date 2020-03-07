@@ -8,10 +8,21 @@ class Goals extends React.Component {
     }
 
     render() {
-        const goalList = this.props.currentGoals.map((goal) => {
+        let desiredGoals;
+
+        if (this.props.viewGoals.toLowerCase() === 'annual') {
+            desiredGoals = this.props.currentGoals.annualGoals;
+        } else if (this.props.viewGoals.toLowerCase() === 'monthly') {
+            desiredGoals = this.props.currentGoals.monthlyGoals;
+        } else if (this.props.viewGoals.toLowerCase() === 'weekly') {
+            desiredGoals = this.props.currentGoals.weeklyGoals;
+        }
+
+        const goalList = desiredGoals.map((goal) => {
             return <GoalCards 
                 goal={goal}
                 viewGoals={this.props.viewGoals}
+                key={`${this.props.viewGoals}: ${goal.id}`}
             />
         });
 

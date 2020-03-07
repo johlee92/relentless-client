@@ -9,7 +9,7 @@ class PageNav extends React.Component {
 
     render() {
         return (
-            <nav class="PageNav">
+            <nav className="PageNav">
                 <section>
                     <Link to='/'>Relentless</Link>                   
                 </section>
