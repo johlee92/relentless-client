@@ -34,19 +34,19 @@ class LandingPage extends React.Component {
                 </div>
                 <div className="methodology">
                     <div className="methodology-cards" name="clarity" onClick={this.displayToggle}>
-                        <h3>Clarity</h3>
+                        <h3 name="clarity" onClick={this.displayToggle}>Clarity</h3>
                         <p style={{display:this.state.clarity}}>
                             Know the destinations (i.e. setting the goals) is an important step of the process
                         </p>
                     </div>
                     <div className="methodology-cards" name="hyperfocus" onClick={this.displayToggle}>
-                        <h3>Hyperfocus</h3>
+                        <h3 name="hyperfocus" onClick={this.displayToggle}>Hyperfocus</h3>
                         <p style={{display:this.state.hyperfocus}}>
                             Determine which three goals are the top priorities right now to focus our precious time and energy
                         </p>
                     </div>
                     <div className="methodology-cards" name="discipline" onClick={this.displayToggle}>
-                        <h3>Discipline</h3>
+                        <h3 name="discipline" onClick={this.displayToggle}>Discipline</h3>
                         <p style={{display:this.state.discipline}}>
                             Transformation requires presistent effort - breaking goals down into actionable pieces drives change
                         </p>

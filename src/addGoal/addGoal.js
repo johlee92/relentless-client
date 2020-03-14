@@ -25,7 +25,24 @@ class AddGoal extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const {content} = this.state;
-        const newGoal = {content};
+        let newGoal;
+
+        if(!e.target.getAttribute("id") && this.props.viewGoals.toLowerCase() === 'monthly') {
+            newGoal = {
+                content: content,
+                //gets the value from the Select form
+                annual_goal: e.target.associated_goal.value
+            }
+        } else if(!e.target.getAttribute("id") && this.props.viewGoals.toLowerCase() === 'weekly') {
+            newGoal = {
+                content: content,
+                //gets the value from the Select form
+                monthly_goal: e.target.associated_goal.value
+            }
+        } else {
+            newGoal = {content};
+        }
+
         const url = `${config.API_ENDPOINT}`;
   
         // correcting for where user enters less than 1 character 
@@ -68,6 +85,7 @@ class AddGoal extends Component {
         }
 
         if(this.props.viewGoals.toLowerCase() === 'monthly') {
+            
             fetch(url + '/api/monthlyGoals/', options)
                 .then(res => {
                     if(!res.ok) {
@@ -118,20 +136,99 @@ class AddGoal extends Component {
     //     this.props.history.goBack();
     // }
 
+    parentGoalSelection() {
+        if(this.props.viewGoals.toLowerCase() === 'annual') {
+            return (
+                <span>
+                    <h2>Add an Annual Goal</h2>
+                    <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
+                    <label htmlFor="content">New Goal:</label>
+                    <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
+                    <div className="addGoals__buttons">
+                        <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                        <button type="submit" >Save</button>
+                        <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
+                    </div>  
+                    </form>
+                </span>
+            );
+        }
+
+        if(this.props.viewGoals.toLowerCase() === 'monthly') {
+            if(this.props.currentGoals.annualGoals.length === 0) {
+                return  (
+                    <span>
+                        Please add annual goals
+                    </span>
+                )
+            }
+
+            let associatedGoalsOptions = this.props.currentGoals.annualGoals.map((goal) => {
+                return (                    
+                    <option value={goal.id} id={goal.id}>{goal.content}</option>    
+                )
+            })
+            
+            return  (
+                <span>
+                    <h2>Add a Monthly Goal</h2>
+                    <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
+                        <label htmlFor="content">New Goal:</label>
+                        <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
+                        <label htmlFor="associated_goal">Associated Annual Goal:</label>
+                        <select name="associated_goal" id="associated_goal">
+                            {associatedGoalsOptions}
+                        </select>
+                        <div className="addGoals__buttons">
+                            <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                            <button type="submit" >Save</button>
+                            <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
+                        </div>  
+                    </form>
+                </span>
+            )
+        }
+
+        if(this.props.viewGoals.toLowerCase() === 'weekly') {
+            if(this.props.currentGoals.monthlyGoals.length === 0) {
+                return  (
+                    <span>
+                        Please add this month's goals
+                    </span>
+                )
+            }
+
+            let associatedGoalsOptions = this.props.currentGoals.monthlyGoals.map((goal) => {
+                return (                    
+                    <option value={goal.id} id={goal.id}>{goal.content}</option>    
+                )
+            })
+            
+            return  (
+                <span>
+                    <h2>Add a Weekly Goal</h2>
+                    <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
+                        <label htmlFor="content">New Goal:</label>
+                        <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
+                        <label htmlFor="associated_goal">Associated Monthly Goal:</label>
+                        <select name="associated_goal" id="associated_goal">
+                            {associatedGoalsOptions}
+                        </select>
+                        <div className="addGoals__buttons">
+                            <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                            <button type="submit" >Save</button>
+                            <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
+                        </div>  
+                    </form>
+                </span>
+            )
+        }
+    }
+
     render() {
         return (
         <div className="addGoal">
-            <h2>Add Goal</h2>
-             
-            <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
-            <label htmlFor="content">Goal:</label>
-            <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
-            <div className="addGoals__buttons">
-                <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
-                <button type="submit" >Save</button>
-                <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
-            </div>  
-            </form>
+            {this.parentGoalSelection()}
         </div>
         );
     }

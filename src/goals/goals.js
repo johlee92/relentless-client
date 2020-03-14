@@ -18,7 +18,8 @@ class Goals extends React.Component {
             desiredGoals = this.props.currentGoals.weeklyGoals;
         }
 
-        const goalList = desiredGoals.map((goal) => {
+        //taking the list of goals from props, sorting them in ascending order, then map to list as cards
+        const goalList = desiredGoals.sort((a,b) => a.id - b.id).map((goal) => { 
             return <GoalCards 
                 goal={goal}
                 viewGoals={this.props.viewGoals}
