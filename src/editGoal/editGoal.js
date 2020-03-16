@@ -1,21 +1,15 @@
 import React, { Component } from  'react';
-import './addGoal.css';
+import './editGoal.css';
 import config from '../config';
 import GoalsContext from '../GoalsContext';
-import moment from 'moment';
 
-class AddGoal extends Component {
+class EditGoal extends Component {
     constructor(props) {
         super(props);
         this.state = {
             content: '',
             errorMessage: '',
         }
-        // let m = moment(new Date(this.props.yearNum, 1, 1, 0, 0, 0))
-        // let newM = m.add(this.props.weekNum, 'weeks').format('LLL');
-        // console.log(m);
-        // console.log(newM);
-        // console.log(moment('2016-03-12 13:00:00').add(1, 'day').format());
     }
 
     static contextType = GoalsContext;
@@ -36,21 +30,16 @@ class AddGoal extends Component {
             newGoal = {
                 content: content,
                 //gets the value from the Select form
-                annual_goal: e.target.associated_goal.value,
-                date_created: moment(new Date(this.props.yearNum, 0, 1, 0, 0, 0)).add(this.props.weekNum - 1, 'weeks').format()
+                annual_goal: e.target.associated_goal.value
             }
         } else if(!e.target.getAttribute("id") && this.props.viewGoals.toLowerCase() === 'weekly') {
             newGoal = {
                 content: content,
                 //gets the value from the Select form
-                monthly_goal: e.target.associated_goal.value,
-                date_created: moment(new Date(this.props.yearNum, 0, 1, 0, 0, 0)).add(this.props.weekNum - 1, 'weeks').format()
+                monthly_goal: e.target.associated_goal.value
             }
         } else {
-            newGoal = {
-                content: content,
-                date_created: moment(new Date(this.props.yearNum, 0, 1, 0, 0, 0)).add(this.props.weekNum - 1, 'weeks').format()
-            };
+            newGoal = {content};
         }
 
         const url = `${config.API_ENDPOINT}`;
@@ -65,27 +54,28 @@ class AddGoal extends Component {
         }
 
         const options = {
-            method: 'POST',
+            method: 'PATCH',
             body: JSON.stringify(newGoal),
             headers: {
                 "Content-Type": "application/json"
             }
         };
 
+        console.log(options)
+        console.log(this.props.targetGoalId)
+
         if(this.props.viewGoals.toLowerCase() === 'annual') {
-            fetch(url + '/api/annualGoals/', options)
+            fetch(url + '/api/annualGoals/' + this.props.targetGoalId, options)
                 .then(res => {
                     if(!res.ok) {
                         throw new Error('Something went wrong, please try again later');
                     }
-                    return res.json();
-                })
-                .then(data => {
                     this.setState({
                         content: ''
                     });
                     this.context.goalsFetch();
-                    this.props.changeDisplayAddGoals();
+                    this.props.changeDisplayEditGoals();
+                    return res.json();
                 })
                 .catch(err => {
                     this.setState({
@@ -96,19 +86,17 @@ class AddGoal extends Component {
 
         if(this.props.viewGoals.toLowerCase() === 'monthly') {
             
-            fetch(url + '/api/monthlyGoals/', options)
+            fetch(url + '/api/monthlyGoals/' + this.props.targetGoalId, options)
                 .then(res => {
                     if(!res.ok) {
                         throw new Error('Something went wrong, please try again later');
                     }
-                    return res.json();
-                })
-                .then(data => {
                     this.setState({
                         content: ''
                     });
                     this.context.goalsFetch();
-                    this.props.changeDisplayAddGoals();
+                    this.props.changeDisplayEditGoals();
+                    return res.json();
                 })
                 .catch(err => {
                     this.setState({
@@ -118,19 +106,17 @@ class AddGoal extends Component {
         }
 
         if(this.props.viewGoals.toLowerCase() === 'weekly') {
-            fetch(url + '/api/weeklyGoals/', options)
+            fetch(url + '/api/weeklyGoals/' + this.props.targetGoalId, options)
                 .then(res => {
                     if(!res.ok) {
                         throw new Error('Something went wrong, please try again later');
                     }
-                    return res.json();
-                })
-                .then(data => {
                     this.setState({
                         content: ''
                     });
                     this.context.goalsFetch();
-                    this.props.changeDisplayAddGoals();
+                    this.props.changeDisplayEditGoals();
+                    return res.json();
                 })
                 .catch(err => {
                     this.setState({
@@ -140,22 +126,22 @@ class AddGoal extends Component {
         }
     }
 
-    //this isn't working. need to talk to mentor about it
-    // navigateBack = (e) => {
-    //     e.preventDefault();
-    //     this.props.history.goBack();
-    // }
-
-    parentGoalSelection() {
+    editGoalFrom() {
         if(this.props.viewGoals.toLowerCase() === 'annual') {
             return (
                 <span>
-                    <h2>Add Annual Goal</h2>
-                    <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
-                    <label htmlFor="content">New Goal:</label>
-                    <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
-                    <div className="addGoals__buttons">
-                        <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                    <h2>Edit Annual Goal</h2>
+                    <form className="editGoal__form" onSubmit={e => this.handleSubmit(e)}>
+                    <label htmlFor="content">Goal:</label>
+                    <input 
+                        type="text" 
+                        name="content" 
+                        id="content" 
+                        placeholder={this.props.targetGoal.content}
+                        onChange={e => this.contentChange(e.target.value)}
+                    />
+                    <div className="editGoals__buttons">
+                        <button onClick={this.props.changeDisplayEditGoals}>Cancel</button>
                         <button type="submit" >Save</button>
                         <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                     </div>  
@@ -181,16 +167,22 @@ class AddGoal extends Component {
             
             return  (
                 <span>
-                    <h2>Add Monthly Goal</h2>
-                    <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
-                        <label htmlFor="content">New Goal:</label>
-                        <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
+                    <h2>Edit Monthly Goal</h2>
+                    <form className="editGoal__form" onSubmit={e => this.handleSubmit(e)}>
+                        <label htmlFor="content">Goal:</label>
+                        <input 
+                            type="text" 
+                            name="content" 
+                            id="content" 
+                            placeholder={this.props.targetGoal.content} 
+                            onChange={e => this.contentChange(e.target.value)}
+                        />
                         <label htmlFor="associated_goal">Associated Annual Goal:</label>
                         <select name="associated_goal" id="associated_goal">
                             {associatedGoalsOptions}
                         </select>
-                        <div className="addGoals__buttons">
-                            <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                        <div className="editGoals__buttons">
+                            <button onClick={this.props.changeDisplayEditGoals}>Cancel</button>
                             <button type="submit" >Save</button>
                             <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                         </div>  
@@ -216,16 +208,22 @@ class AddGoal extends Component {
             
             return  (
                 <span>
-                    <h2>Add Weekly Goal</h2>
-                    <form className="addGoal__form" onSubmit={e => this.handleSubmit(e)}>
-                        <label htmlFor="content">New Goal:</label>
-                        <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
+                    <h2>Edit Weekly Goal</h2>
+                    <form className="editGoal__form" onSubmit={e => this.handleSubmit(e)}>
+                        <label htmlFor="content">Goal:</label>
+                        <input 
+                            type="text" 
+                            name="content" 
+                            id="content" 
+                            placeholder={this.props.targetGoal.content} 
+                            onChange={e => this.contentChange(e.target.value)}
+                        />
                         <label htmlFor="associated_goal">Associated Monthly Goal:</label>
                         <select name="associated_goal" id="associated_goal">
                             {associatedGoalsOptions}
                         </select>
-                        <div className="addGoals__buttons">
-                            <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                        <div className="editGoals__buttons">
+                            <button onClick={this.props.changeDisplayEditGoals}>Cancel</button>
                             <button type="submit" >Save</button>
                             <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                         </div>  
@@ -237,11 +235,11 @@ class AddGoal extends Component {
 
     render() {
         return (
-        <div className="addGoal">
-            {this.parentGoalSelection()}
+        <div className="editGoal">
+            {this.editGoalFrom()}
         </div>
         );
     }
 }
 
-export default AddGoal;
+export default EditGoal;

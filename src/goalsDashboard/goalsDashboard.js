@@ -8,6 +8,7 @@ class GoalsDashboard extends React.Component {
 
     //need to collect the data and sum up key results
     //count and show the # of consecutive weeks logging in and setting calls
+    //dropped the consecutive weeks functionality. need to talk to mentor about it.
     //show the # of goals completed in the week
     weeklyCompletion = (listWeeklyGoals) => {
         const totalNumWeekGoals = listWeeklyGoals.length;
@@ -23,23 +24,38 @@ class GoalsDashboard extends React.Component {
             (weeklyGoals.filter(goal => (goal.complete))).length;
         return `${completedNumGoals}/${totalNumGoals}`
     }
-    //user should be able to interact with the KPIs
+    //show the user how many goals have been set for the current period
+    currentGoalsMissing = () => {
+        let weeklyGoalsMissing = Math.max(3 - (this.props.currentGoals.weeklyGoals.length),0);
+        let monthlyGoalsMissing = Math.max(3 - (this.props.currentGoals.monthlyGoals.length),0);
 
-    //dropped the consecutive weeks functionality. need to talk to mentor about it.
+        if (weeklyGoalsMissing > 0 && monthlyGoalsMissing > 0) {
+            return `Please add ${monthlyGoalsMissing} monthly goals and ${weeklyGoalsMissing} weekly goals`;
+        } else if (monthlyGoalsMissing > 0) {
+            return `Please add ${monthlyGoalsMissing} monthly goals`;
+        } else if (weeklyGoalsMissing > 0) {
+            return `Please add ${weeklyGoalsMissing} weekly goals`;
+        }
+    }
+    //user should be able to interact with the KPIs
 
     render() {
         return (
-            <div className="dashboard">
-                {/* <div className="dashboard-cards">
-                    Consecutive Weeks: 5
-                </div> */}
-                <div className="dashboard-cards">
-                    Weekly Goals Completion: {this.weeklyCompletion(this.props.currentWeekGoals)}
+            <span>
+                <div className="dashboard">
+                    <div>
+                        {this.currentGoalsMissing()}
+                    </div> 
                 </div>
-                <div className="dashboard-cards">
-                    YTD Accomplishment: {this.ytdCompletion(this.props.annual_goals, this.props.monthly_goals, this.props.weekly_goals)}
-                </div> 
-            </div>
+                <div className="dashboard">
+                    <div className="dashboard-cards">
+                        Weekly Goals Completion: {this.weeklyCompletion(this.props.currentWeekGoals)}
+                    </div>
+                    <div className="dashboard-cards">
+                        YTD Accomplishment: {this.ytdCompletion(this.props.annual_goals, this.props.monthly_goals, this.props.weekly_goals)}
+                    </div> 
+                </div>
+            </span>
         )
     }
 }

@@ -24,6 +24,7 @@ class Goals extends React.Component {
                 goal={goal}
                 viewGoals={this.props.viewGoals}
                 key={`${this.props.viewGoals}: ${goal.id}`}
+                changeDisplayEditGoals={this.props.changeDisplayEditGoals}
             />
         });
 

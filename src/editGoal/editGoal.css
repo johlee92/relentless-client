@@ -1,4 +1,4 @@
-.addGoal {
+.editGoal {
     width: 80vw;
     margin: 20px auto;
     padding: 10px;
@@ -6,18 +6,18 @@
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
 }
   
-.addGoal__buttons {
+.editGoal__buttons {
     margin-top: 5px;
     padding: 10px;
     text-align: right;
 }
   
-.addGoal__form input, .addGoal__form textarea, .addGoal__form label {
+.editGoal__form input, .editGoal__form textarea, .editGoal__form label {
     display: block;
     margin-top: 5px;
 }
   
-.addGoal__form label {
+.editGoal__form label {
     text-align: left;
     font-size: 0.9em;
 }

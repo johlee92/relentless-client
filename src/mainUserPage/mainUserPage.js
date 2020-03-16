@@ -6,6 +6,7 @@ import GoalsDashboard from '../goalsDashboard/goalsDashboard';
 import GoalsNav from '../goalsNav/goalsNav';
 import Goals from '../goals/goals';
 import AddGoal from '../addGoal/addGoal';
+import EditGoal from '../editGoal/editGoal';
 import PageFooter from '../footer/pageFooter';
 import GoalsContext from '../GoalsContext';
 import'./mainUserPage.css';
@@ -24,8 +25,10 @@ class MainUserPage extends React.Component {
             //defaults the view for the user to the weekly view
             viewGoals: 'weekly',
             //display mechanisms for the goals or add goals sections
+            displayGoals: 'block',
             displayAddGoal: 'none',
-            displayGoals: 'block'
+            displayEditGoal: 'none',
+            targetGoalId: '',
         }
     }
 
@@ -39,7 +42,7 @@ class MainUserPage extends React.Component {
             monthNum: thisMonthNum,
             yearNum: thisYearNum
         })
-        // fake date loading from API call
+        // API call to the backend API
         this.goalsFetch();
     }
 
@@ -68,12 +71,32 @@ class MainUserPage extends React.Component {
         if (this.state.displayAddGoal === 'none') {
             this.setState({
                 displayGoals: 'none',
-                displayAddGoal: 'block'
+                displayAddGoal: 'block',
+                displayEditGoal:'none'
             })
         } else  {
             this.setState({
                 displayGoals: 'block',
-                displayAddGoal: 'none'
+                displayAddGoal: 'none',
+                displayEditGoal:'none'
+            })
+        }
+    }
+
+    changeDisplayEditGoals = (id) => {
+        if (this.state.displayEditGoal === 'none') {
+            this.setState({
+                displayGoals: 'none',
+                displayAddGoal: 'none',
+                displayEditGoal: 'block',
+                targetGoalId: id,
+            })
+        } else  {
+            this.setState({
+                displayGoals: 'block',
+                displayAddGoal: 'none',
+                displayEditGoal:'none',
+                targetGoalId: '',
             })
         }
     }
@@ -150,7 +173,7 @@ class MainUserPage extends React.Component {
     }
 
     render() {
-        const {annual_goals, monthly_goals, weekly_goals, weekNum, yearNum, viewGoals} = this.state;
+        const {annual_goals, monthly_goals, weekly_goals, weekNum, yearNum, viewGoals, targetGoalId} = this.state;
         
         let currentWeekGoals = weekly_goals.filter(
             goal => ( 
@@ -181,6 +204,17 @@ class MainUserPage extends React.Component {
             goalsFetch: this.goalsFetch,
         }
 
+        let targetGoal;
+        if(targetGoalId === ''){
+            targetGoal = '';
+        } else if(viewGoals.toLowerCase() === 'annual') {
+            targetGoal = annual_goals.find(goal => goal.id = targetGoalId)
+        } else if(viewGoals.toLowerCase() === 'monthly') {
+            targetGoal = monthly_goals.find(goal => goal.id = targetGoalId)
+        } else if(viewGoals.toLowerCase() === 'weekly') {
+            targetGoal = weekly_goals.find(goal => goal.id = targetGoalId)
+        }
+
         return (
             <div>
                 <GoalsContext.Provider value={contextValue}>
@@ -190,6 +224,7 @@ class MainUserPage extends React.Component {
                         monthly_goals={monthly_goals}
                         weekly_goals={weekly_goals}
                         currentWeekGoals={currentGoals.weeklyGoals}
+                        currentGoals={currentGoals}
                     />
                     <GoalsNav
                         weekNum={weekNum}
@@ -207,6 +242,7 @@ class MainUserPage extends React.Component {
                         <Goals
                             currentGoals={currentGoals}
                             viewGoals={viewGoals}
+                            changeDisplayEditGoals={this.changeDisplayEditGoals}
                         />
                     </span>
                     <span style={{display:this.state.displayAddGoal}}>
@@ -214,6 +250,17 @@ class MainUserPage extends React.Component {
                             viewGoals={viewGoals}
                             currentGoals={currentGoals}
                             changeDisplayAddGoals={this.changeDisplayAddGoals}
+                            weekNum = {weekNum}
+                            yearNum = {yearNum}
+                        />
+                    </span>
+                    <span style={{display:this.state.displayEditGoal}}>
+                        <EditGoal
+                            viewGoals={viewGoals}
+                            currentGoals={currentGoals}
+                            changeDisplayEditGoals={this.changeDisplayEditGoals}
+                            targetGoalId={targetGoalId}
+                            targetGoal={targetGoal}
                         />
                     </span>
                     <PageFooter/>

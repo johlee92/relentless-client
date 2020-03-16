@@ -21,8 +21,7 @@ class GoalCards extends React.Component {
             //why must I convert the option into a string for this to work?
             complete: `${!(this.props.goal.complete)}`
         }
-
-        console.log(JSON.stringify(newGoalComplete))
+        // console.log(JSON.stringify(newGoalComplete))
 
         const options = {
             method: 'PATCH',
@@ -104,7 +103,7 @@ class GoalCards extends React.Component {
                 {this.props.goal.content}
                 <div>
                     <button onClick={this.statusChange}>Status: {statusGoal}</button>
-                    <button>Edit</button>
+                    <button onClick={() => this.props.changeDisplayEditGoals(this.props.goal.id)}>Edit</button>
                 </div>
             </div>
         )
