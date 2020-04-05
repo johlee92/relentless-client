@@ -30,6 +30,9 @@ class LandingPage extends React.Component {
                     <h2>Relentless: Live with Intent</h2>
                 </div>
                 <div>
+                    Sign-up today to start the goal-based transformation journey!
+                </div>
+                <div>
                     We strive to help you achieve your goals by focusing on three factors.  
                 </div>
                 <div className="methodology">

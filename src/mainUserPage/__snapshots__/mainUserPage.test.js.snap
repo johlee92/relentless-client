@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainUserPage component renders the component by default 1`] = `
+<div>
+  <ContextProvider
+    value={
+      Object {
+        "currentGoals": Object {
+          "annualGoals": Array [],
+          "monthlyGoals": Array [],
+          "weeklyGoals": Array [],
+        },
+        "goalsFetch": [Function],
+      }
+    }
+  >
+    <PageNav />
+    <GoalsDashboard
+      annual_goals={Array []}
+      currentGoals={
+        Object {
+          "annualGoals": Array [],
+          "monthlyGoals": Array [],
+          "weeklyGoals": Array [],
+        }
+      }
+      currentWeekGoals={Array []}
+      monthly_goals={Array []}
+      weekly_goals={Array []}
+    />
+    <GoalsNav
+      changeViewGoals={[Function]}
+      changeWeekNum={[Function]}
+      weekNum={14}
+      yearNum={2020}
+    />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+    >
+      Add Goals
+    </button>
+    <span
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+    >
+      <Goals
+        changeDisplayEditGoals={[Function]}
+        currentGoals={
+          Object {
+            "annualGoals": Array [],
+            "monthlyGoals": Array [],
+            "weeklyGoals": Array [],
+          }
+        }
+        viewGoals="weekly"
+      />
+    </span>
+    <span
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <AddGoal
+        changeDisplayAddGoals={[Function]}
+        currentGoals={
+          Object {
+            "annualGoals": Array [],
+            "monthlyGoals": Array [],
+            "weeklyGoals": Array [],
+          }
+        }
+        viewGoals="weekly"
+        weekNum={14}
+        yearNum={2020}
+      />
+    </span>
+    <span
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <EditGoal
+        changeDisplayEditGoals={[Function]}
+        currentGoals={
+          Object {
+            "annualGoals": Array [],
+            "monthlyGoals": Array [],
+            "weeklyGoals": Array [],
+          }
+        }
+        targetGoal=""
+        targetGoalId=""
+        viewGoals="weekly"
+      />
+    </span>
+    <PageFooter />
+  </ContextProvider>
+</div>
+`;
+
+exports[`MainUserPage component renders the component with props 1`] = `
+<div>
+  <ContextProvider
+    value={
+      Object {
+        "currentGoals": Object {
+          "annualGoals": Array [],
+          "monthlyGoals": Array [],
+          "weeklyGoals": Array [],
+        },
+        "goalsFetch": [Function],
+      }
+    }
+  >
+    <PageNav />
+    <GoalsDashboard
+      annual_goals={Array []}
+      currentGoals={
+        Object {
+          "annualGoals": Array [],
+          "monthlyGoals": Array [],
+          "weeklyGoals": Array [],
+        }
+      }
+      currentWeekGoals={Array []}
+      monthly_goals={Array []}
+      weekly_goals={Array []}
+    />
+    <GoalsNav
+      changeViewGoals={[Function]}
+      changeWeekNum={[Function]}
+      weekNum={14}
+      yearNum={2020}
+    />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+    >
+      Add Goals
+    </button>
+    <span
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+    >
+      <Goals
+        changeDisplayEditGoals={[Function]}
+        currentGoals={
+          Object {
+            "annualGoals": Array [],
+            "monthlyGoals": Array [],
+            "weeklyGoals": Array [],
+          }
+        }
+        viewGoals="weekly"
+      />
+    </span>
+    <span
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <AddGoal
+        changeDisplayAddGoals={[Function]}
+        currentGoals={
+          Object {
+            "annualGoals": Array [],
+            "monthlyGoals": Array [],
+            "weeklyGoals": Array [],
+          }
+        }
+        viewGoals="weekly"
+        weekNum={14}
+        yearNum={2020}
+      />
+    </span>
+    <span
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <EditGoal
+        changeDisplayEditGoals={[Function]}
+        currentGoals={
+          Object {
+            "annualGoals": Array [],
+            "monthlyGoals": Array [],
+            "weeklyGoals": Array [],
+          }
+        }
+        targetGoal=""
+        targetGoalId=""
+        viewGoals="weekly"
+      />
+    </span>
+    <PageFooter />
+  </ContextProvider>
+</div>
+`;

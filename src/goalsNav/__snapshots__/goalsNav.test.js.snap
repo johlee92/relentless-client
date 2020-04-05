@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoalsNav component renders the component by default 1`] = `
+<div
+  className="GoalsNavSection"
+>
+  <div
+    className="GoalsNav"
+  >
+    <button
+      value="Invalid date"
+    >
+      Previous Week
+    </button>
+    <span>
+      Week: 
+    </span>
+    <button
+      value="Invalid date"
+    >
+      Next Week
+    </button>
+  </div>
+  <div
+    className="GoalsNav"
+  >
+    <button
+      value="Annual"
+    >
+      Annual
+    </button>
+    <button
+      value="Monthly"
+    >
+      Monthly
+    </button>
+    <button
+      value="Weekly"
+    >
+      Weekly
+    </button>
+  </div>
+</div>
+`;
+
+exports[`GoalsNav component renders the component from props 1`] = `
+<div
+  className="GoalsNavSection"
+>
+  <div
+    className="GoalsNav"
+  >
+    <button
+      value="Invalid date"
+    >
+      Previous Week
+    </button>
+    <span>
+      Week: 
+    </span>
+    <button
+      value="Invalid date"
+    >
+      Next Week
+    </button>
+  </div>
+  <div
+    className="GoalsNav"
+  >
+    <button
+      value="Annual"
+    >
+      Annual
+    </button>
+    <button
+      value="Monthly"
+    >
+      Monthly
+    </button>
+    <button
+      value="Weekly"
+    >
+      Weekly
+    </button>
+  </div>
+</div>
+`;

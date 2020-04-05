@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoalsDashboard component renders the component from props 1`] = `
+<span>
+  <div
+    className="dashboard"
+  >
+    <div />
+  </div>
+  <div
+    className="dashboard"
+  >
+    <div
+      className="dashboard-cards"
+    >
+      Weekly Goals Completion: 
+      3/3
+    </div>
+    <div
+      className="dashboard-cards"
+    >
+      YTD Accomplishment: 
+      9/9
+    </div>
+  </div>
+</span>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoalCards component renders the component from props 1`] = `
+<div
+  className="goal-cards"
+>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Status: 
+      Complete
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+  </div>
+</div>
+`;

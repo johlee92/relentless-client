@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageFooter component renders the component by default 1`] = `
+<footer
+  className="PageFooter"
+>
+  <section>
+    <img
+      alt="creator logo"
+      src="logo.png"
+    />
+  </section>
+  <section>
+    Project by JYL
+  </section>
+  <section>
+    <a
+      href="mailto:johnathanlee72@hotmail.com"
+    >
+      <img
+        alt="JYL email"
+        className="content-info email"
+        src="mail.jpg"
+      />
+    </a>
+    <a
+      href="https://linkedin.com"
+      target="_blank"
+    >
+      <img
+        alt="JYL linkedin"
+        className="content-info linkedin"
+        src="linkedin.jpg"
+      />
+    </a>
+    <a
+      href="https://github.com/johlee92"
+      target="_blank"
+    >
+      <img
+        alt="JYL GitHub"
+        className="content-info github"
+        src="GitHub.png"
+      />
+    </a>
+  </section>
+</footer>
+`;
+
+exports[`PageFooter component renders the component from props 1`] = `
+<footer
+  className="PageFooter"
+>
+  <section>
+    <img
+      alt="creator logo"
+      src="logo.png"
+    />
+  </section>
+  <section>
+    Project by JYL
+  </section>
+  <section>
+    <a
+      href="mailto:johnathanlee72@hotmail.com"
+    >
+      <img
+        alt="JYL email"
+        className="content-info email"
+        src="mail.jpg"
+      />
+    </a>
+    <a
+      href="https://linkedin.com"
+      target="_blank"
+    >
+      <img
+        alt="JYL linkedin"
+        className="content-info linkedin"
+        src="linkedin.jpg"
+      />
+    </a>
+    <a
+      href="https://github.com/johlee92"
+      target="_blank"
+    >
+      <img
+        alt="JYL GitHub"
+        className="content-info github"
+        src="GitHub.png"
+      />
+    </a>
+  </section>
+</footer>
+`;

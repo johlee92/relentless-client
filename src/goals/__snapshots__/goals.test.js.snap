@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Goals component renders the Goals component from props 1`] = `
+<div>
+  <GoalCards
+    goal="test"
+    key="annual: undefined"
+    viewGoals="annual"
+  />
+</div>
+`;

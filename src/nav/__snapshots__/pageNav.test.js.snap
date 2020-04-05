@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNav component renders the component by default 1`] = `
+<nav
+  className="PageNav"
+>
+  <section>
+    <Link
+      to="/"
+    >
+      Relentless
+    </Link>
+  </section>
+  <section>
+    <Link
+      to="/user1"
+    >
+      User1
+    </Link>
+  </section>
+</nav>
+`;
+
+exports[`PageNav component renders the component from props 1`] = `
+<nav
+  className="PageNav"
+>
+  <section>
+    <Link
+      to="/"
+    >
+      Relentless
+    </Link>
+  </section>
+  <section>
+    <Link
+      to="/user1"
+    >
+      User1
+    </Link>
+  </section>
+</nav>
+`;

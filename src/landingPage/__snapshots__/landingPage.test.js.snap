@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage component renders the component by default 1`] = `
+<div>
+  <PageNav />
+  <div>
+    <h2>
+      Relentless: Live with Intent
+    </h2>
+  </div>
+  <div>
+    Sign-up today to start the goal-based transformation journey!
+  </div>
+  <div>
+    We strive to help you achieve your goals by focusing on three factors.
+  </div>
+  <div
+    className="methodology"
+  >
+    <div
+      className="methodology-cards"
+      name="clarity"
+      onClick={[Function]}
+    >
+      <h3
+        name="clarity"
+        onClick={[Function]}
+      >
+        Clarity
+      </h3>
+      <p
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        Know the destinations (i.e. setting the goals) is an important step of the process
+      </p>
+    </div>
+    <div
+      className="methodology-cards"
+      name="hyperfocus"
+      onClick={[Function]}
+    >
+      <h3
+        name="hyperfocus"
+        onClick={[Function]}
+      >
+        Hyperfocus
+      </h3>
+      <p
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        Determine which three goals are the top priorities right now to focus our precious time and energy
+      </p>
+    </div>
+    <div
+      className="methodology-cards"
+      name="discipline"
+      onClick={[Function]}
+    >
+      <h3
+        name="discipline"
+        onClick={[Function]}
+      >
+        Discipline
+      </h3>
+      <p
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        Transformation requires presistent effort - breaking goals down into actionable pieces drives change
+      </p>
+    </div>
+  </div>
+  <PageFooter />
+</div>
+`;
+
+exports[`LandingPage component renders the component from props 1`] = `
+<div>
+  <PageNav />
+  <div>
+    <h2>
+      Relentless: Live with Intent
+    </h2>
+  </div>
+  <div>
+    Sign-up today to start the goal-based transformation journey!
+  </div>
+  <div>
+    We strive to help you achieve your goals by focusing on three factors.
+  </div>
+  <div
+    className="methodology"
+  >
+    <div
+      className="methodology-cards"
+      name="clarity"
+      onClick={[Function]}
+    >
+      <h3
+        name="clarity"
+        onClick={[Function]}
+      >
+        Clarity
+      </h3>
+      <p
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        Know the destinations (i.e. setting the goals) is an important step of the process
+      </p>
+    </div>
+    <div
+      className="methodology-cards"
+      name="hyperfocus"
+      onClick={[Function]}
+    >
+      <h3
+        name="hyperfocus"
+        onClick={[Function]}
+      >
+        Hyperfocus
+      </h3>
+      <p
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        Determine which three goals are the top priorities right now to focus our precious time and energy
+      </p>
+    </div>
+    <div
+      className="methodology-cards"
+      name="discipline"
+      onClick={[Function]}
+    >
+      <h3
+        name="discipline"
+        onClick={[Function]}
+      >
+        Discipline
+      </h3>
+      <p
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        Transformation requires presistent effort - breaking goals down into actionable pieces drives change
+      </p>
+    </div>
+  </div>
+  <PageFooter />
+</div>
+`;

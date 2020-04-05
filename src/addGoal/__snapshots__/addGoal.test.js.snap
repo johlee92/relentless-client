@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddGoal component renders the component from props 1`] = `
+<div
+  className="addGoal"
+/>
+`;
