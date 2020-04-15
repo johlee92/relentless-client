@@ -15,7 +15,7 @@ class PageFooter extends React.Component {
         return (
             <footer className="PageFooter">
                 <section> 
-                    <img src={jyLogo} alt="creator logo"/>                   
+                    <img className="content-info" src={jyLogo} alt="creator logo"/>                   
                 </section>
                 <section> 
                     Project by JYL

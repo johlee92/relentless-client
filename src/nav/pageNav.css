@@ -6,10 +6,22 @@
     align-items: center;
     margin-bottom: 20px;
     min-height: 50px;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    vertical-align: middle;
 }
 
-/* update how I'm selecting the image */
-img {
-    width: 25px;
-    height: 25px;
+img.nav-content {
+    width: 50px;
+    vertical-align: middle;
+}
+
+button.try-for-free {
+    size: 1.5em;
+    background-color: deepskyblue;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
 }

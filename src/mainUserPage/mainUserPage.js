@@ -219,50 +219,54 @@ class MainUserPage extends React.Component {
             <div>
                 <GoalsContext.Provider value={contextValue}>
                     <PageNav/>
-                    <GoalsDashboard
-                        annual_goals={annual_goals}
-                        monthly_goals={monthly_goals}
-                        weekly_goals={weekly_goals}
-                        currentWeekGoals={currentGoals.weeklyGoals}
-                        currentGoals={currentGoals}
-                    />
-                    <GoalsNav
-                        weekNum={weekNum}
-                        yearNum={yearNum}
-                        changeWeekNum={this.changeWeekNum}
-                        changeViewGoals={this.changeViewGoals}
-                    />
-                    <button 
-                        style={{display:this.state.displayGoals}}
-                        onClick={this.changeDisplayAddGoals}
-                    >
-                        Add Goals
-                    </button>
-                    <span style={{display:this.state.displayGoals}}>
-                        <Goals
-                            currentGoals={currentGoals}
-                            viewGoals={viewGoals}
-                            changeDisplayEditGoals={this.changeDisplayEditGoals}
-                        />
-                    </span>
-                    <span style={{display:this.state.displayAddGoal}}>
-                        <AddGoal
-                            viewGoals={viewGoals}
-                            currentGoals={currentGoals}
-                            changeDisplayAddGoals={this.changeDisplayAddGoals}
-                            weekNum = {weekNum}
-                            yearNum = {yearNum}
-                        />
-                    </span>
-                    <span style={{display:this.state.displayEditGoal}}>
-                        <EditGoal
-                            viewGoals={viewGoals}
-                            currentGoals={currentGoals}
-                            changeDisplayEditGoals={this.changeDisplayEditGoals}
-                            targetGoalId={targetGoalId}
-                            targetGoal={targetGoal}
-                        />
-                    </span>
+                    <div className="main-user-page"> 
+                        <div className="main-user-page-container">
+                            <GoalsNav
+                                weekNum={weekNum}
+                                yearNum={yearNum}
+                                changeWeekNum={this.changeWeekNum}
+                                changeViewGoals={this.changeViewGoals}
+                            />
+                            <GoalsDashboard
+                                annual_goals={annual_goals}
+                                monthly_goals={monthly_goals}
+                                weekly_goals={weekly_goals}
+                                currentWeekGoals={currentGoals.weeklyGoals}
+                                currentGoals={currentGoals}
+                            />
+                            <button 
+                                style={{display:this.state.displayGoals}}
+                                onClick={this.changeDisplayAddGoals}
+                            >
+                                Add Goals
+                            </button>
+                            <span style={{display:this.state.displayGoals}}>
+                                <Goals
+                                    currentGoals={currentGoals}
+                                    viewGoals={viewGoals}
+                                    changeDisplayEditGoals={this.changeDisplayEditGoals}
+                                />
+                            </span>
+                            <span style={{display:this.state.displayAddGoal}}>
+                                <AddGoal
+                                    viewGoals={viewGoals}
+                                    currentGoals={currentGoals}
+                                    changeDisplayAddGoals={this.changeDisplayAddGoals}
+                                    weekNum = {weekNum}
+                                    yearNum = {yearNum}
+                                />
+                            </span>
+                            <span style={{display:this.state.displayEditGoal}}>
+                                <EditGoal
+                                    viewGoals={viewGoals}
+                                    currentGoals={currentGoals}
+                                    changeDisplayEditGoals={this.changeDisplayEditGoals}
+                                    targetGoalId={targetGoalId}
+                                    targetGoal={targetGoal}
+                                />
+                            </span>
+                        </div>
+                    </div>
                     <PageFooter/>
                 </GoalsContext.Provider>
             </div>

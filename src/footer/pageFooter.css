@@ -10,8 +10,7 @@
     min-height: 50px;
 }
 
-/* update how I'm selecting the image */
-img {
+img.content-info  {
     width: 25px;
     height: 25px;
 }

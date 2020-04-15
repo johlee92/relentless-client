@@ -1,0 +1,9 @@
+.main-user-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-user-page-container {
+    width: 80vw;
+}

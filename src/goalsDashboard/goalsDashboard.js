@@ -42,9 +42,12 @@ class GoalsDashboard extends React.Component {
     render() {
         return (
             <span>
+                <h2>
+                    Dashboard and KPIs:
+                </h2>
                 <div className="dashboard">
-                    <div>
-                        {this.currentGoalsMissing()}
+                    <div className="goals-missing-message">
+                        <p>{this.currentGoalsMissing()}</p>
                     </div> 
                 </div>
                 <div className="dashboard">
