@@ -7,3 +7,19 @@
 .main-user-page-container {
     width: 80vw;
 }
+
+button.add-goals {
+    font-size: 16px;
+    margin-right: 15px;
+    border: none;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid deepskyblue;
+    transition-duration: 0.4s;
+}
+
+button.add-goals:hover {
+    cursor: pointer;
+    background-color: deepskyblue;
+    color: white;
+}

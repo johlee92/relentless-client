@@ -155,8 +155,8 @@ class AddGoal extends Component {
                     <label htmlFor="content">New Goal:</label>
                     <input type="text" name="content" id="content" placeholder="Content" onChange={e => this.contentChange(e.target.value)}/>
                     <div className="addGoals__buttons">
-                        <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
-                        <button type="submit" >Save</button>
+                        <button className="addGoals" onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                        <button className="addGoals" type="submit" >Save</button>
                         <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                     </div>  
                     </form>
@@ -190,8 +190,8 @@ class AddGoal extends Component {
                             {associatedGoalsOptions}
                         </select>
                         <div className="addGoals__buttons">
-                            <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
-                            <button type="submit" >Save</button>
+                            <button className="addGoals" onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                            <button className="addGoals" type="submit" >Save</button>
                             <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                         </div>  
                     </form>
@@ -225,8 +225,8 @@ class AddGoal extends Component {
                             {associatedGoalsOptions}
                         </select>
                         <div className="addGoals__buttons">
-                            <button onClick={this.props.changeDisplayAddGoals}>Cancel</button>
-                            <button type="submit" >Save</button>
+                            <button className="addGoals" onClick={this.props.changeDisplayAddGoals}>Cancel</button>
+                            <button className="addGoals" type="submit" >Save</button>
                             <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                         </div>  
                     </form>

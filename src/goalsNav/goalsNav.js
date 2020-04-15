@@ -10,21 +10,21 @@ class GoalsNav extends React.Component {
     render() {
         return (
             <div className="GoalsNavSection">
-                <div className="GoalsNav">
-                    <button
-                        value={moment(`${this.props.yearNum}`).add(this.props.weekNum - 2, 'weeks').endOf('week').format('DD MM YYYY')}
-                        onClick={this.props.changeWeekNum}
-                    >
-                        Previous Week
-                    </button>
-                    <span>Week: {this.props.weekNum}</span>
-                    <button 
-                        value={moment(`${this.props.yearNum}`).add(this.props.weekNum, 'weeks').endOf('week').format('DD MM YYYY')}
-                        onClick={this.props.changeWeekNum}
-                    >
-                        Next Week
-                    </button>
-                </div>
+                <h2>Week of {moment(`${this.props.yearNum}`).add(this.props.weekNum -1, 'weeks').startOf('week').format('MM/DD/YYYY')}</h2>
+                <button
+                    className="week-nav"
+                    value={moment(`${this.props.yearNum}`).add(this.props.weekNum - 2, 'weeks').endOf('week').format('DD MM YYYY')}
+                    onClick={this.props.changeWeekNum}
+                >
+                    Previous Week
+                </button>
+                <button 
+                    className="week-nav"
+                    value={moment(`${this.props.yearNum}`).add(this.props.weekNum, 'weeks').endOf('week').format('DD MM YYYY')}
+                    onClick={this.props.changeWeekNum}
+                >
+                    Next Week
+                </button>
                 <div className="GoalsNav">
                     <button
                         value="Annual" 

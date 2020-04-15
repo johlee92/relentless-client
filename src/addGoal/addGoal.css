@@ -1,9 +1,14 @@
 .addGoal {
     width: 80vw;
     margin: 20px auto;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
+    border: 2px solid lightslategray;
+}
+
+.addGoal > span > h2 {
+    padding: 0;
+    margin: 0;
 }
   
 .addGoal__buttons {
@@ -24,4 +29,21 @@
 
 select {
     width: 80%;
+}
+
+button.addGoals {
+    background-color: lightslategray;
+    border: 2px solid lightslategray;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+button.addGoals:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
 }

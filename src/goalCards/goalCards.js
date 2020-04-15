@@ -100,10 +100,10 @@ class GoalCards extends React.Component {
 
         return (
             <div className="goal-cards">
-                {this.props.goal.content}
+                <p>{this.props.goal.content}</p>
                 <div>
-                    <button onClick={this.statusChange}>Status: {statusGoal}</button>
-                    <button onClick={() => this.props.changeDisplayEditGoals(this.props.goal.id)}>Edit</button>
+                    <button className="goal-cards" onClick={this.statusChange}>Status: {statusGoal}</button>
+                    <button className="goal-cards" onClick={() => this.props.changeDisplayEditGoals(this.props.goal.id)}>Edit</button>
                 </div>
             </div>
         )

@@ -141,8 +141,8 @@ class EditGoal extends Component {
                         onChange={e => this.contentChange(e.target.value)}
                     />
                     <div className="editGoals__buttons">
-                        <button onClick={this.props.changeDisplayEditGoals}>Cancel</button>
-                        <button type="submit" >Save</button>
+                        <button className="editGoals" onClick={this.props.changeDisplayEditGoals}>Cancel</button>
+                        <button className="editGoals" type="submit" >Save</button>
                         <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                     </div>  
                     </form>
@@ -182,8 +182,8 @@ class EditGoal extends Component {
                             {associatedGoalsOptions}
                         </select>
                         <div className="editGoals__buttons">
-                            <button onClick={this.props.changeDisplayEditGoals}>Cancel</button>
-                            <button type="submit" >Save</button>
+                            <button className="editGoals" onClick={this.props.changeDisplayEditGoals}>Cancel</button>
+                            <button className="editGoals" type="submit" >Save</button>
                             <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                         </div>  
                     </form>
@@ -223,8 +223,8 @@ class EditGoal extends Component {
                             {associatedGoalsOptions}
                         </select>
                         <div className="editGoals__buttons">
-                            <button onClick={this.props.changeDisplayEditGoals}>Cancel</button>
-                            <button type="submit" >Save</button>
+                            <button className="editGoals" onClick={this.props.changeDisplayEditGoals}>Cancel</button>
+                            <button className="editGoals" type="submit" >Save</button>
                             <span style={{display:this.state.errorDisplay, color:'red'}}>{this.state.errorMessage}</span>
                         </div>  
                     </form>

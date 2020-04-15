@@ -234,7 +234,9 @@ class MainUserPage extends React.Component {
                                 currentWeekGoals={currentGoals.weeklyGoals}
                                 currentGoals={currentGoals}
                             />
+                            <h2>Period Goals:</h2>
                             <button 
+                                className="add-goals"
                                 style={{display:this.state.displayGoals}}
                                 onClick={this.changeDisplayAddGoals}
                             >
