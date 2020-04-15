@@ -8,6 +8,11 @@ exports[`PageNav component renders the component by default 1`] = `
     <Link
       to="/"
     >
+      <img
+        alt="Relentless Logo"
+        className="nav-content"
+        src="RelentlessLogo.jpg"
+      />
       Relentless
     </Link>
   </section>
@@ -15,7 +20,11 @@ exports[`PageNav component renders the component by default 1`] = `
     <Link
       to="/user1"
     >
-      User1
+      <button
+        className="try-for-free"
+      >
+        Try for Free
+      </button>
     </Link>
   </section>
 </nav>
@@ -29,6 +38,11 @@ exports[`PageNav component renders the component from props 1`] = `
     <Link
       to="/"
     >
+      <img
+        alt="Relentless Logo"
+        className="nav-content"
+        src="RelentlessLogo.jpg"
+      />
       Relentless
     </Link>
   </section>
@@ -36,7 +50,11 @@ exports[`PageNav component renders the component from props 1`] = `
     <Link
       to="/user1"
     >
-      User1
+      <button
+        className="try-for-free"
+      >
+        Try for Free
+      </button>
     </Link>
   </section>
 </nav>

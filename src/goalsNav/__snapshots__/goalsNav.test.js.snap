@@ -4,23 +4,22 @@ exports[`GoalsNav component renders the component by default 1`] = `
 <div
   className="GoalsNavSection"
 >
-  <div
-    className="GoalsNav"
+  <h2>
+    Week of 
+    Invalid date
+  </h2>
+  <button
+    className="week-nav"
+    value="Invalid date"
   >
-    <button
-      value="Invalid date"
-    >
-      Previous Week
-    </button>
-    <span>
-      Week: 
-    </span>
-    <button
-      value="Invalid date"
-    >
-      Next Week
-    </button>
-  </div>
+    Previous Week
+  </button>
+  <button
+    className="week-nav"
+    value="Invalid date"
+  >
+    Next Week
+  </button>
   <div
     className="GoalsNav"
   >
@@ -47,23 +46,22 @@ exports[`GoalsNav component renders the component from props 1`] = `
 <div
   className="GoalsNavSection"
 >
-  <div
-    className="GoalsNav"
+  <h2>
+    Week of 
+    Invalid date
+  </h2>
+  <button
+    className="week-nav"
+    value="Invalid date"
   >
-    <button
-      value="Invalid date"
-    >
-      Previous Week
-    </button>
-    <span>
-      Week: 
-    </span>
-    <button
-      value="Invalid date"
-    >
-      Next Week
-    </button>
-  </div>
+    Previous Week
+  </button>
+  <button
+    className="week-nav"
+    value="Invalid date"
+  >
+    Next Week
+  </button>
   <div
     className="GoalsNav"
   >

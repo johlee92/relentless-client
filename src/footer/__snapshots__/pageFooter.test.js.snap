@@ -7,6 +7,7 @@ exports[`PageFooter component renders the component by default 1`] = `
   <section>
     <img
       alt="creator logo"
+      className="content-info"
       src="logo.png"
     />
   </section>
@@ -25,6 +26,7 @@ exports[`PageFooter component renders the component by default 1`] = `
     </a>
     <a
       href="https://linkedin.com"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <img
@@ -35,6 +37,7 @@ exports[`PageFooter component renders the component by default 1`] = `
     </a>
     <a
       href="https://github.com/johlee92"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <img
@@ -54,6 +57,7 @@ exports[`PageFooter component renders the component from props 1`] = `
   <section>
     <img
       alt="creator logo"
+      className="content-info"
       src="logo.png"
     />
   </section>
@@ -72,6 +76,7 @@ exports[`PageFooter component renders the component from props 1`] = `
     </a>
     <a
       href="https://linkedin.com"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <img
@@ -82,6 +87,7 @@ exports[`PageFooter component renders the component from props 1`] = `
     </a>
     <a
       href="https://github.com/johlee92"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <img

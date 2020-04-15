@@ -3,82 +3,125 @@
 exports[`LandingPage component renders the component by default 1`] = `
 <div>
   <PageNav />
-  <div>
-    <h2>
-      Relentless: Live with Intent
-    </h2>
-  </div>
-  <div>
-    Sign-up today to start the goal-based transformation journey!
-  </div>
-  <div>
-    We strive to help you achieve your goals by focusing on three factors.
-  </div>
   <div
-    className="methodology"
+    className="landing-page"
   >
     <div
-      className="methodology-cards"
-      name="clarity"
-      onClick={[Function]}
+      className="landing-page-container"
     >
-      <h3
-        name="clarity"
-        onClick={[Function]}
+      <div>
+        <h2>
+          Live with Intent. Have clarity. Be hyperfocused. Be disciplined. And Achieve your goals.
+        </h2>
+      </div>
+      <img
+        alt="track and field lanes into the unknown"
+        className="landing-page-image"
+        src="trackField.jpeg"
+      />
+      <Link
+        to="/user1"
       >
-        Clarity
-      </h3>
-      <p
-        style={
-          Object {
-            "display": "none",
-          }
-        }
+        <button
+          className="try-for-free"
+        >
+          Try for Free
+        </button>
+      </Link>
+      <div>
+        <h2>
+          Our Three Pillars
+        </h2>
+      </div>
+      <div>
+        We strive to help you achieve your goals by focusing on three factors.
+      </div>
+      <div
+        className="methodology"
       >
-        Know the destinations (i.e. setting the goals) is an important step of the process
-      </p>
-    </div>
-    <div
-      className="methodology-cards"
-      name="hyperfocus"
-      onClick={[Function]}
-    >
-      <h3
-        name="hyperfocus"
-        onClick={[Function]}
+        <div
+          className="methodology-cards"
+          name="clarity"
+          onClick={[Function]}
+        >
+          <h3
+            name="clarity"
+            onClick={[Function]}
+          >
+            Clarity
+          </h3>
+          <p
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Know the destinations (i.e. setting the goals) is an important step of the process
+          </p>
+        </div>
+        <div
+          className="methodology-cards"
+          name="hyperfocus"
+          onClick={[Function]}
+        >
+          <h3
+            name="hyperfocus"
+            onClick={[Function]}
+          >
+            Hyperfocus
+          </h3>
+          <p
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Determine which three goals are the top priorities right now to focus our precious time and energy
+          </p>
+        </div>
+        <div
+          className="methodology-cards"
+          name="discipline"
+          onClick={[Function]}
+        >
+          <h3
+            name="discipline"
+            onClick={[Function]}
+          >
+            Discipline
+          </h3>
+          <p
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Transformation requires presistent effort - breaking goals down into actionable pieces drives change
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>
+          Let's reach new heights together!
+        </h2>
+      </div>
+      <img
+        alt="Relentless Logo"
+        className="landing-page-image"
+        src="new-heights.jpeg"
+      />
+      <Link
+        to="/user1"
       >
-        Hyperfocus
-      </h3>
-      <p
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-      >
-        Determine which three goals are the top priorities right now to focus our precious time and energy
-      </p>
-    </div>
-    <div
-      className="methodology-cards"
-      name="discipline"
-      onClick={[Function]}
-    >
-      <h3
-        name="discipline"
-        onClick={[Function]}
-      >
-        Discipline
-      </h3>
-      <p
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-      >
-        Transformation requires presistent effort - breaking goals down into actionable pieces drives change
-      </p>
+        <button
+          className="try-for-free"
+        >
+          Try for Free
+        </button>
+      </Link>
     </div>
   </div>
   <PageFooter />
@@ -88,82 +131,125 @@ exports[`LandingPage component renders the component by default 1`] = `
 exports[`LandingPage component renders the component from props 1`] = `
 <div>
   <PageNav />
-  <div>
-    <h2>
-      Relentless: Live with Intent
-    </h2>
-  </div>
-  <div>
-    Sign-up today to start the goal-based transformation journey!
-  </div>
-  <div>
-    We strive to help you achieve your goals by focusing on three factors.
-  </div>
   <div
-    className="methodology"
+    className="landing-page"
   >
     <div
-      className="methodology-cards"
-      name="clarity"
-      onClick={[Function]}
+      className="landing-page-container"
     >
-      <h3
-        name="clarity"
-        onClick={[Function]}
+      <div>
+        <h2>
+          Live with Intent. Have clarity. Be hyperfocused. Be disciplined. And Achieve your goals.
+        </h2>
+      </div>
+      <img
+        alt="track and field lanes into the unknown"
+        className="landing-page-image"
+        src="trackField.jpeg"
+      />
+      <Link
+        to="/user1"
       >
-        Clarity
-      </h3>
-      <p
-        style={
-          Object {
-            "display": "none",
-          }
-        }
+        <button
+          className="try-for-free"
+        >
+          Try for Free
+        </button>
+      </Link>
+      <div>
+        <h2>
+          Our Three Pillars
+        </h2>
+      </div>
+      <div>
+        We strive to help you achieve your goals by focusing on three factors.
+      </div>
+      <div
+        className="methodology"
       >
-        Know the destinations (i.e. setting the goals) is an important step of the process
-      </p>
-    </div>
-    <div
-      className="methodology-cards"
-      name="hyperfocus"
-      onClick={[Function]}
-    >
-      <h3
-        name="hyperfocus"
-        onClick={[Function]}
+        <div
+          className="methodology-cards"
+          name="clarity"
+          onClick={[Function]}
+        >
+          <h3
+            name="clarity"
+            onClick={[Function]}
+          >
+            Clarity
+          </h3>
+          <p
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Know the destinations (i.e. setting the goals) is an important step of the process
+          </p>
+        </div>
+        <div
+          className="methodology-cards"
+          name="hyperfocus"
+          onClick={[Function]}
+        >
+          <h3
+            name="hyperfocus"
+            onClick={[Function]}
+          >
+            Hyperfocus
+          </h3>
+          <p
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Determine which three goals are the top priorities right now to focus our precious time and energy
+          </p>
+        </div>
+        <div
+          className="methodology-cards"
+          name="discipline"
+          onClick={[Function]}
+        >
+          <h3
+            name="discipline"
+            onClick={[Function]}
+          >
+            Discipline
+          </h3>
+          <p
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Transformation requires presistent effort - breaking goals down into actionable pieces drives change
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>
+          Let's reach new heights together!
+        </h2>
+      </div>
+      <img
+        alt="Relentless Logo"
+        className="landing-page-image"
+        src="new-heights.jpeg"
+      />
+      <Link
+        to="/user1"
       >
-        Hyperfocus
-      </h3>
-      <p
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-      >
-        Determine which three goals are the top priorities right now to focus our precious time and energy
-      </p>
-    </div>
-    <div
-      className="methodology-cards"
-      name="discipline"
-      onClick={[Function]}
-    >
-      <h3
-        name="discipline"
-        onClick={[Function]}
-      >
-        Discipline
-      </h3>
-      <p
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-      >
-        Transformation requires presistent effort - breaking goals down into actionable pieces drives change
-      </p>
+        <button
+          className="try-for-free"
+        >
+          Try for Free
+        </button>
+      </Link>
     </div>
   </div>
   <PageFooter />

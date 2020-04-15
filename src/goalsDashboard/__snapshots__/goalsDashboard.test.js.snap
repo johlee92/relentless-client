@@ -2,10 +2,17 @@
 
 exports[`GoalsDashboard component renders the component from props 1`] = `
 <span>
+  <h2>
+    Dashboard and KPIs:
+  </h2>
   <div
     className="dashboard"
   >
-    <div />
+    <div
+      className="goals-missing-message"
+    >
+      <p />
+    </div>
   </div>
   <div
     className="dashboard"
