@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// because using Enzyme to test
-// need to make sure the setupTest.js file links to adapter
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import GoalCards from './goalCards';

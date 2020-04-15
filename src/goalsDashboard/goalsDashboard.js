@@ -6,9 +6,6 @@ class GoalsDashboard extends React.Component {
         super(props);
     }
 
-    //need to collect the data and sum up key results
-    //count and show the # of consecutive weeks logging in and setting calls
-    //dropped the consecutive weeks functionality. need to talk to mentor about it.
     //show the # of goals completed in the week
     weeklyCompletion = (listWeeklyGoals) => {
         const totalNumWeekGoals = listWeeklyGoals.length;
@@ -37,8 +34,7 @@ class GoalsDashboard extends React.Component {
             return `Please add ${weeklyGoalsMissing} weekly goals`;
         }
     }
-    //user should be able to interact with the KPIs
-
+    
     render() {
         return (
             <span>

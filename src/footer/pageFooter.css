@@ -5,7 +5,6 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-    /* what's going ong with the padding-top; think it's because of the flex box */
     padding-top: 200x;
     min-height: 50px;
 }

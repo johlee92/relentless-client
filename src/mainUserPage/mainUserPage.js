@@ -63,8 +63,6 @@ class MainUserPage extends React.Component {
         this.setState({
             viewGoals: newViewGoals
         })
-        // discuss with mentor, appears to be some lag in updating the state
-        // console.log(this.state.viewGoals)
     }
 
     changeDisplayAddGoals = () => {
@@ -109,7 +107,6 @@ class MainUserPage extends React.Component {
                 "Content-Type": "application/json"
             }
         };
-        // debugger;
         fetch(url + '/api/annualGoals', options)
             .then(res => {
                 if(!res.ok) {
@@ -119,7 +116,6 @@ class MainUserPage extends React.Component {
             })
             .then(res => res.json())
             .then(data => {
-                // debugger;
                 this.setState({
                     annual_goals: data,
                     error: null
@@ -189,7 +185,6 @@ class MainUserPage extends React.Component {
         ));
 
         let currentAnnualGoals = annual_goals.filter(
-            //need to undersatnd why it's returning 2019
             goal => moment(goal.date_created).add(1, 'weeks').year() === this.state.yearNum
         );
 

@@ -8,20 +8,16 @@ class GoalCards extends React.Component {
         super(props);
     }
 
-    // check this to make sure I don't need it
     static contextType = GoalsContext;
     componentDidMount() {
-        // console.log(this.context);
-        // console.log(this.context.goalsFetch);
+        
     }
 
     statusChange = () => {
         const url = `${config.API_ENDPOINT}`;
         let newGoalComplete = {
-            //why must I convert the option into a string for this to work?
             complete: `${!(this.props.goal.complete)}`
         }
-        // console.log(JSON.stringify(newGoalComplete))
 
         const options = {
             method: 'PATCH',
@@ -88,12 +84,7 @@ class GoalCards extends React.Component {
 
     render() {
         let statusGoal = 'Incomplete';
-        // need to talk to mentor about why the below code doesn't work
-        // const completeString = this.props.goal.complete;
-        // console.log(typeof completeString); // this returns 'string'
-        // console.log(completeString.toLowerCase()); // why doesn't this work?
-        // console.log(this.props.goal.complete);
-        // console.log(this.props.goal.complete.toLowerCase());
+        
         if (this.props.goal.complete) {
             statusGoal = 'Complete'
         }

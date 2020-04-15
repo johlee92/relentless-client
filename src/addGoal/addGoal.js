@@ -11,11 +11,6 @@ class AddGoal extends Component {
             content: '',
             errorMessage: '',
         }
-        // let m = moment(new Date(this.props.yearNum, 1, 1, 0, 0, 0))
-        // let newM = m.add(this.props.weekNum, 'weeks').format('LLL');
-        // console.log(m);
-        // console.log(newM);
-        // console.log(moment('2016-03-12 13:00:00').add(1, 'day').format());
     }
 
     static contextType = GoalsContext;
@@ -139,12 +134,6 @@ class AddGoal extends Component {
                 });
         }
     }
-
-    //this isn't working. need to talk to mentor about it
-    // navigateBack = (e) => {
-    //     e.preventDefault();
-    //     this.props.history.goBack();
-    // }
 
     parentGoalSelection() {
         if(this.props.viewGoals.toLowerCase() === 'annual') {

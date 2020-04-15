@@ -61,9 +61,6 @@ class EditGoal extends Component {
             }
         };
 
-        console.log(options)
-        console.log(this.props.targetGoalId)
-
         if(this.props.viewGoals.toLowerCase() === 'annual') {
             fetch(url + '/api/annualGoals/' + this.props.targetGoalId, options)
                 .then(res => {
