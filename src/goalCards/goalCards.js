@@ -4,9 +4,6 @@ import config from '../config';
 import GoalsContext from '../GoalsContext';
 
 class GoalCards extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     static contextType = GoalsContext;
     componentDidMount() {

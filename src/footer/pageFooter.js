@@ -7,10 +7,6 @@ import githubIcon from '../images/GitHub.png';
 
 
 class PageFooter extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <footer className="PageFooter">
@@ -24,10 +20,10 @@ class PageFooter extends React.Component {
                     <a href="mailto:johnathanlee72@hotmail.com">
                         <img className="content-info email" src={mailIcon} alt="JYL email"/>
                     </a>
-                    <a href="https://linkedin.com" target="_blank">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                         <img className="content-info linkedin" src={linkedIcon} alt="JYL linkedin"/>
                     </a>
-                    <a href="https://github.com/johlee92" target="_blank">
+                    <a href="https://github.com/johlee92" target="_blank" rel="noopener noreferrer">
                         <img className="content-info github" src={githubIcon} alt="JYL GitHub"/>
                     </a>                  
                 </section>

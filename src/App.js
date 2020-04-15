@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import LandingPage from './landingPage/landingPage';
 import MainUserPage from './mainUserPage/mainUserPage';
 import ErrorBoundary from './errorBoundary';

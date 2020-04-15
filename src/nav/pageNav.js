@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import relentlessLogo from '../images/RelentlessLogo.jpg';
 
 class PageNav extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

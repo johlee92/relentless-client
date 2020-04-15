@@ -2,9 +2,6 @@ import React from 'react';
 import'./goalsDashboard.css';
 
 class GoalsDashboard extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     //show the # of goals completed in the week
     weeklyCompletion = (listWeeklyGoals) => {

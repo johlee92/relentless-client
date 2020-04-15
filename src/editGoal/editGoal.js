@@ -199,7 +199,7 @@ class EditGoal extends Component {
 
             let associatedGoalsOptions = this.props.currentGoals.monthlyGoals.map((goal) => {
                 return (                    
-                    <option value={goal.id} id={goal.id}>{goal.content}</option>    
+                    <option key={goal.id} value={goal.id} id={goal.id}>{goal.content}</option>    
                 )
             })
             

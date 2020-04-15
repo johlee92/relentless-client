@@ -3,9 +3,6 @@ import'./goalsNav.css';
 import moment from 'moment';
 
 class GoalsNav extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

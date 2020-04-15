@@ -3,9 +3,6 @@ import'./goals.css';
 import GoalCards from '../goalCards/goalCards';
 
 class Goals extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         let desiredGoals;
