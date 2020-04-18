@@ -1,12 +1,17 @@
 .methodology-cards {
     background-color: lightgray;
-    max-width: 80%;
     margin: 10px auto;
-    padding: 5px;
+    padding: 25px;
+    margin-top: 25px;
 }
 
 .methodology-cards:hover {
     cursor: pointer;
+}
+
+.even-section {
+    margin-top: 25px;
+    border-top: 5px solid gainsboro;
 }
 
 .landing-page {

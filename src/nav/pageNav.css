@@ -7,7 +7,7 @@
     margin-bottom: 20px;
     min-height: 50px;
     padding: 15px 25px;
-    font-size: 1.5em;
+    font-size: 48px;
     vertical-align: middle;
 }
 
@@ -17,11 +17,14 @@ img.nav-content {
 }
 
 button.try-for-free {
-    size: 1.5em;
     background-color: deepskyblue;
     border: none;
     color: white;
-    font-size: 18px;
     padding: 10px 20px;
     border-radius: 20px;
+    font-size: 28px;
+}
+
+button.try-for-free:hover {
+    cursor: pointer;
 }
