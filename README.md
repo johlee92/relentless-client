@@ -27,16 +27,16 @@ https://github.com/johlee92/relentless-server
 ### Screenshots of App
 
 #### Landing Page
-![]https://user-images.githubusercontent.com/52260646/79395178-58067080-7f36-11ea-9fcc-db14d0a2648f.png
+![](https://user-images.githubusercontent.com/52260646/79395178-58067080-7f36-11ea-9fcc-db14d0a2648f.png)
 Please click one of the skyblue Try for Free buttons to enter the user page with app functionalities
 
 #### Middle Section of Landing Page
-![]https://user-images.githubusercontent.com/52260646/79395315-969c2b00-7f36-11ea-9b71-1e99106f4d8e.png
+![](https://user-images.githubusercontent.com/52260646/79395315-969c2b00-7f36-11ea-9b71-1e99106f4d8e.png)
 This section explains the main principles behind the app and the three actions or benefits for the user.
 Clicking on the gray boxes toggles between showing and hiding description of the three pillars.
 
 #### Sample User Page
-![]https://user-images.githubusercontent.com/52260646/79395392-c21f1580-7f36-11ea-9165-c62e60d39f2c.png
+![](https://user-images.githubusercontent.com/52260646/79395392-c21f1580-7f36-11ea-9165-c62e60d39f2c.png)
 This is the main user page. Some notes from top to bottom:
 The user sees the current week as a header with buttons below it to navigate to other weeks
 Below that is a gray navigation panel to toggle between weekly, monthly, and annual goals
