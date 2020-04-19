@@ -4,6 +4,20 @@ import { Link } from 'react-router-dom';
 import relentlessLogo from '../images/RelentlessLogo.jpg';
 
 class PageNav extends React.Component {
+    constructor(props) {
+        super(props)
+
+        let buttonDisplay = "block";
+        if(!(props.match.path === "/")) {
+            buttonDisplay = "none";
+        }
+
+        this.state = {
+            buttonDisplay
+        }
+    }
+
+
 
     render() {
         return (
@@ -14,7 +28,7 @@ class PageNav extends React.Component {
                         Relentless
                     </Link>                   
                 </section>
-                <section> 
+                <section style={{display: this.state.buttonDisplay}}> 
                     <Link to='/user1'>
                         <button className="try-for-free">Try for Free</button>
                     </Link>

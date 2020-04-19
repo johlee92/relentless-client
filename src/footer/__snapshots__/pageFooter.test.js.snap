@@ -11,9 +11,7 @@ exports[`PageFooter component renders the component by default 1`] = `
       src="logo.png"
     />
   </section>
-  <section>
-    Project by JYL
-  </section>
+  <section />
   <section>
     <a
       href="mailto:johnathanlee72@hotmail.com"
@@ -61,9 +59,7 @@ exports[`PageFooter component renders the component from props 1`] = `
       src="logo.png"
     />
   </section>
-  <section>
-    Project by JYL
-  </section>
+  <section />
   <section>
     <a
       href="mailto:johnathanlee72@hotmail.com"

@@ -213,7 +213,9 @@ class MainUserPage extends React.Component {
         return (
             <div>
                 <GoalsContext.Provider value={contextValue}>
-                    <PageNav/>
+                    <PageNav 
+                        {...this.props}
+                    />
                     <div className="main-user-page"> 
                         <div className="main-user-page-container">
                             <GoalsNav
@@ -229,6 +231,7 @@ class MainUserPage extends React.Component {
                                 currentWeekGoals={currentGoals.weeklyGoals}
                                 currentGoals={currentGoals}
                             />
+                            <div className="section-break">
                             <h2>Period Goals:</h2>
                             <button 
                                 className="add-goals"
@@ -263,6 +266,7 @@ class MainUserPage extends React.Component {
                                 />
                             </span>
                         </div>
+                    </div>
                     </div>
                     <PageFooter/>
                 </GoalsContext.Provider>

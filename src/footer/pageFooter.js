@@ -14,7 +14,7 @@ class PageFooter extends React.Component {
                     <img className="content-info" src={jyLogo} alt="creator logo"/>                   
                 </section>
                 <section> 
-                    Project by JYL
+                     
                 </section>
                 <section> 
                     <a href="mailto:johnathanlee72@hotmail.com">

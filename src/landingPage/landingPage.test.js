@@ -7,14 +7,17 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe(`LandingPage component`, () => {
     const props = {
-        className: 'test-class-name'
+        className: 'test-class-name',
+        match: {
+            path: '/'
+        }
     }
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
             <BrowserRouter> 
-                <LandingPage />
+                <LandingPage {...props} />
             </BrowserRouter>, div);
         ReactDOM.unmountComponentAtNode(div);
     });

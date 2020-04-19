@@ -28,14 +28,16 @@ class LandingPage extends React.Component {
     render() {
         return (
             <div>
-                <PageNav/>
+                <PageNav
+                    {...this.props}
+                />
                 <div className="landing-page">
                     <div className="landing-page-container">
                         <div>
                             <h1>Live with Intent. Have clarity. Be hyperfocused. Be disciplined. And Achieve your goals.</h1>
                             <img className="landing-page-image" src={trackField} alt="track and field lanes into the unknown"/>
                         </div>
-                        <div className="even-section">
+                        <div className="section-break">
                             <h2>How Relentless Works:</h2>
                             <div>
                                 Three easy steps towards achieivng more!  
@@ -61,7 +63,7 @@ class LandingPage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className="section-break">
                             <h2>Our Three Pillars</h2>
                             <div>
                                 We strive to help you achieve your goals by focusing on three factors.  
@@ -87,9 +89,12 @@ class LandingPage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="even-section">
+                        <div className="section-break">
                             <h2>Let's reach new heights together!</h2>
                             <img className="landing-page-image" src={newHeightsImage} alt="Relentless Logo"/>
+                            <Link to='/user1'>
+                                <button className="try-for-free">Try for Free</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

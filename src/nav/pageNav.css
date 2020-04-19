@@ -7,12 +7,12 @@
     margin-bottom: 20px;
     min-height: 50px;
     padding: 15px 25px;
-    font-size: 48px;
+    font-size: 20px;
     vertical-align: middle;
 }
 
 img.nav-content {
-    width: 50px;
+    width: 30px;
     vertical-align: middle;
 }
 
@@ -22,9 +22,25 @@ button.try-for-free {
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
-    font-size: 28px;
+    font-size: 14px;
 }
 
 button.try-for-free:hover {
     cursor: pointer;
+}
+
+@media (min-width: 760px) {
+    .PageNav {
+        font-size: 32px;
+    }
+
+    button.try-for-free {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .PageNav {
+        font-size: 32px;
+    }
 }
