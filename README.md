@@ -31,9 +31,8 @@ https://github.com/johlee92/relentless-server
 Please click one of the skyblue Try for Free buttons to enter the user page with app functionalities
 
 #### Middle Section of Landing Page
-![](https://user-images.githubusercontent.com/52260646/79395315-969c2b00-7f36-11ea-9b71-1e99106f4d8e.png)
+![](https://user-images.githubusercontent.com/52260646/79680538-f19b7f80-81cd-11ea-896a-26bc91ac6637.png)
 This section explains the main principles behind the app and the three actions or benefits for the user.
-Clicking on the gray boxes toggles between showing and hiding description of the three pillars.
 
 #### Sample User Page
 ![](https://user-images.githubusercontent.com/52260646/79395392-c21f1580-7f36-11ea-9165-c62e60d39f2c.png)
