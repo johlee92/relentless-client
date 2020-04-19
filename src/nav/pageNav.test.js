@@ -7,20 +7,23 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe(`PageNav component`, () => {
     const props = {
-        className: 'test-class-name'
+        className: 'test-class-name',
+        match: {
+            path: '/'
+        }
     }
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
             <BrowserRouter> 
-                <PageNav />
+                <PageNav {...props} />
             </BrowserRouter>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
     it('renders the component by default', () => {
-        const wrapper = shallow(<PageNav />)
+        const wrapper = shallow(<PageNav {...props} />)
         expect(toJson(wrapper)).toMatchSnapshot()
     })
 

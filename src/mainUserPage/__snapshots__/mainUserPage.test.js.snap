@@ -40,81 +40,85 @@ exports[`MainUserPage component renders the component by default 1`] = `
           monthly_goals={Array []}
           weekly_goals={Array []}
         />
-        <h2>
-          Period Goals:
-        </h2>
-        <button
-          className="add-goals"
-          onClick={[Function]}
-          style={
-            Object {
-              "display": "block",
-            }
-          }
+        <div
+          className="section-break"
         >
-          Add Goals
-        </button>
-        <span
-          style={
-            Object {
-              "display": "block",
-            }
-          }
-        >
-          <Goals
-            changeDisplayEditGoals={[Function]}
-            currentGoals={
+          <h2>
+            Period Goals:
+          </h2>
+          <button
+            className="add-goals"
+            onClick={[Function]}
+            style={
               Object {
-                "annualGoals": Array [],
-                "monthlyGoals": Array [],
-                "weeklyGoals": Array [],
+                "display": "block",
               }
             }
-            viewGoals="weekly"
-          />
-        </span>
-        <span
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <AddGoal
-            changeDisplayAddGoals={[Function]}
-            currentGoals={
+          >
+            Add Goals
+          </button>
+          <span
+            style={
               Object {
-                "annualGoals": Array [],
-                "monthlyGoals": Array [],
-                "weeklyGoals": Array [],
+                "display": "block",
               }
             }
-            viewGoals="weekly"
-            weekNum={16}
-            yearNum={2020}
-          />
-        </span>
-        <span
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <EditGoal
-            changeDisplayEditGoals={[Function]}
-            currentGoals={
+          >
+            <Goals
+              changeDisplayEditGoals={[Function]}
+              currentGoals={
+                Object {
+                  "annualGoals": Array [],
+                  "monthlyGoals": Array [],
+                  "weeklyGoals": Array [],
+                }
+              }
+              viewGoals="weekly"
+            />
+          </span>
+          <span
+            style={
               Object {
-                "annualGoals": Array [],
-                "monthlyGoals": Array [],
-                "weeklyGoals": Array [],
+                "display": "none",
               }
             }
-            targetGoal=""
-            targetGoalId=""
-            viewGoals="weekly"
-          />
-        </span>
+          >
+            <AddGoal
+              changeDisplayAddGoals={[Function]}
+              currentGoals={
+                Object {
+                  "annualGoals": Array [],
+                  "monthlyGoals": Array [],
+                  "weeklyGoals": Array [],
+                }
+              }
+              viewGoals="weekly"
+              weekNum={16}
+              yearNum={2020}
+            />
+          </span>
+          <span
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <EditGoal
+              changeDisplayEditGoals={[Function]}
+              currentGoals={
+                Object {
+                  "annualGoals": Array [],
+                  "monthlyGoals": Array [],
+                  "weeklyGoals": Array [],
+                }
+              }
+              targetGoal=""
+              targetGoalId=""
+              viewGoals="weekly"
+            />
+          </span>
+        </div>
       </div>
     </div>
     <PageFooter />
@@ -136,7 +140,14 @@ exports[`MainUserPage component renders the component with props 1`] = `
       }
     }
   >
-    <PageNav />
+    <PageNav
+      className="test-class-name"
+      match={
+        Object {
+          "path": "/",
+        }
+      }
+    />
     <div
       className="main-user-page"
     >
@@ -162,81 +173,85 @@ exports[`MainUserPage component renders the component with props 1`] = `
           monthly_goals={Array []}
           weekly_goals={Array []}
         />
-        <h2>
-          Period Goals:
-        </h2>
-        <button
-          className="add-goals"
-          onClick={[Function]}
-          style={
-            Object {
-              "display": "block",
-            }
-          }
+        <div
+          className="section-break"
         >
-          Add Goals
-        </button>
-        <span
-          style={
-            Object {
-              "display": "block",
-            }
-          }
-        >
-          <Goals
-            changeDisplayEditGoals={[Function]}
-            currentGoals={
+          <h2>
+            Period Goals:
+          </h2>
+          <button
+            className="add-goals"
+            onClick={[Function]}
+            style={
               Object {
-                "annualGoals": Array [],
-                "monthlyGoals": Array [],
-                "weeklyGoals": Array [],
+                "display": "block",
               }
             }
-            viewGoals="weekly"
-          />
-        </span>
-        <span
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <AddGoal
-            changeDisplayAddGoals={[Function]}
-            currentGoals={
+          >
+            Add Goals
+          </button>
+          <span
+            style={
               Object {
-                "annualGoals": Array [],
-                "monthlyGoals": Array [],
-                "weeklyGoals": Array [],
+                "display": "block",
               }
             }
-            viewGoals="weekly"
-            weekNum={16}
-            yearNum={2020}
-          />
-        </span>
-        <span
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <EditGoal
-            changeDisplayEditGoals={[Function]}
-            currentGoals={
+          >
+            <Goals
+              changeDisplayEditGoals={[Function]}
+              currentGoals={
+                Object {
+                  "annualGoals": Array [],
+                  "monthlyGoals": Array [],
+                  "weeklyGoals": Array [],
+                }
+              }
+              viewGoals="weekly"
+            />
+          </span>
+          <span
+            style={
               Object {
-                "annualGoals": Array [],
-                "monthlyGoals": Array [],
-                "weeklyGoals": Array [],
+                "display": "none",
               }
             }
-            targetGoal=""
-            targetGoalId=""
-            viewGoals="weekly"
-          />
-        </span>
+          >
+            <AddGoal
+              changeDisplayAddGoals={[Function]}
+              currentGoals={
+                Object {
+                  "annualGoals": Array [],
+                  "monthlyGoals": Array [],
+                  "weeklyGoals": Array [],
+                }
+              }
+              viewGoals="weekly"
+              weekNum={16}
+              yearNum={2020}
+            />
+          </span>
+          <span
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <EditGoal
+              changeDisplayEditGoals={[Function]}
+              currentGoals={
+                Object {
+                  "annualGoals": Array [],
+                  "monthlyGoals": Array [],
+                  "weeklyGoals": Array [],
+                }
+              }
+              targetGoal=""
+              targetGoalId=""
+              viewGoals="weekly"
+            />
+          </span>
+        </div>
       </div>
     </div>
     <PageFooter />

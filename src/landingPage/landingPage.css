@@ -1,7 +1,7 @@
 .methodology-cards {
     background-color: lightgray;
     margin: 10px auto;
-    padding: 25px;
+    padding: 10px;
     margin-top: 25px;
 }
 
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.even-section {
+.section-break {
     margin-top: 25px;
     border-top: 5px solid gainsboro;
 }
@@ -24,6 +24,10 @@
     width: 80vw;
 }
 
+.landing-page-container > div > h1 {
+    font-size: 24px;
+}
+
 .photo-banner {
     background-color: lightgray;
     font-size: 1.25em;
@@ -34,14 +38,29 @@ img.landing-page-image {
     opacity: 0.75;
 }
 
+@media (min-width: 760px) {
+    .methodology {
+        padding: 15px;
+    }
+
+    .landing-page-container > div > h1 {
+        font-size: 28px;
+    }
+}
+
 @media (min-width: 1024px) {
     .methodology {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        padding: 20px;
     }
 
     .methodology-cards {
         width: 25vw;
+    }
+
+    .landing-page-container > div > h1 {
+        font-size: 32px;
     }
 }

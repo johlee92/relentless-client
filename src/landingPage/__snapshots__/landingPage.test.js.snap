@@ -10,118 +10,136 @@ exports[`LandingPage component renders the component by default 1`] = `
       className="landing-page-container"
     >
       <div>
-        <h2>
+        <h1>
           Live with Intent. Have clarity. Be hyperfocused. Be disciplined. And Achieve your goals.
-        </h2>
+        </h1>
+        <img
+          alt="track and field lanes into the unknown"
+          className="landing-page-image"
+          src="trackField.jpeg"
+        />
       </div>
-      <img
-        alt="track and field lanes into the unknown"
-        className="landing-page-image"
-        src="trackField.jpeg"
-      />
-      <Link
-        to="/user1"
+      <div
+        className="section-break"
       >
-        <button
-          className="try-for-free"
+        <h2>
+          How Relentless Works:
+        </h2>
+        <div>
+          Three easy steps towards achieivng more!
+        </div>
+        <div
+          className="methodology"
         >
-          Try for Free
-        </button>
-      </Link>
-      <div>
+          <div
+            className="methodology-cards even-section-cards"
+          >
+            <h4>
+              1. Determine Annual Goals
+            </h4>
+            <p>
+              Signup and write down three goals for this calendar year. Keep the "SMART" concept in mind - Specific, Measurable, Attainable, Relevant, and Time-based.
+            </p>
+          </div>
+          <div
+            className="methodology-cards even-section-cards"
+          >
+            <h4>
+              2. Set Micro-Goals
+            </h4>
+            <p>
+              Think through the smaller goals that you need to achieve both monthly and weekly to make the annual goal reachable. A good general rule is to have 1 monthly and weekly goal for each of your annual goals.
+            </p>
+          </div>
+          <div
+            className="methodology-cards even-section-cards"
+          >
+            <h4>
+              3. Monitor Progress
+            </h4>
+            <p>
+              Note your progress as you meet and exceed your weekly, monthly, and annual goals. Remember to pat yourself on the back as you go!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="section-break"
+      >
         <h2>
           Our Three Pillars
         </h2>
-      </div>
-      <div>
-        We strive to help you achieve your goals by focusing on three factors.
-      </div>
-      <div
-        className="methodology"
-      >
+        <div>
+          We strive to help you achieve your goals by focusing on three factors.
+        </div>
         <div
-          className="methodology-cards"
-          name="clarity"
-          onClick={[Function]}
+          className="methodology"
         >
-          <h3
+          <div
+            className="methodology-cards"
             name="clarity"
             onClick={[Function]}
           >
-            Clarity
-          </h3>
-          <p
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            Know the destinations (i.e. setting the goals) is an important step of the process
-          </p>
-        </div>
-        <div
-          className="methodology-cards"
-          name="hyperfocus"
-          onClick={[Function]}
-        >
-          <h3
+            <h4
+              name="clarity"
+            >
+              Clarity
+            </h4>
+            <p>
+              Know the destinations (i.e. setting the goals) is an important step of the process
+            </p>
+          </div>
+          <div
+            className="methodology-cards"
             name="hyperfocus"
             onClick={[Function]}
           >
-            Hyperfocus
-          </h3>
-          <p
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            Determine which three goals are the top priorities right now to focus our precious time and energy
-          </p>
-        </div>
-        <div
-          className="methodology-cards"
-          name="discipline"
-          onClick={[Function]}
-        >
-          <h3
+            <h4
+              name="hyperfocus"
+            >
+              Hyperfocus
+            </h4>
+            <p>
+              Determine which three goals are the top priorities right now to focus our precious time and energy
+            </p>
+          </div>
+          <div
+            className="methodology-cards"
             name="discipline"
             onClick={[Function]}
           >
-            Discipline
-          </h3>
-          <p
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            Transformation requires presistent effort - breaking goals down into actionable pieces drives change
-          </p>
+            <h4
+              name="discipline"
+            >
+              Discipline
+            </h4>
+            <p>
+              Transformation requires presistent effort - breaking goals down into actionable pieces drives change
+            </p>
+          </div>
         </div>
       </div>
-      <div>
+      <div
+        className="section-break"
+      >
         <h2>
           Let's reach new heights together!
         </h2>
-      </div>
-      <img
-        alt="Relentless Logo"
-        className="landing-page-image"
-        src="new-heights.jpeg"
-      />
-      <Link
-        to="/user1"
-      >
-        <button
-          className="try-for-free"
+        <img
+          alt="Relentless Logo"
+          className="landing-page-image"
+          src="new-heights.jpeg"
+        />
+        <Link
+          to="/user1"
         >
-          Try for Free
-        </button>
-      </Link>
+          <button
+            className="try-for-free"
+          >
+            Try for Free
+          </button>
+        </Link>
+      </div>
     </div>
   </div>
   <PageFooter />
@@ -130,7 +148,14 @@ exports[`LandingPage component renders the component by default 1`] = `
 
 exports[`LandingPage component renders the component from props 1`] = `
 <div>
-  <PageNav />
+  <PageNav
+    className="test-class-name"
+    match={
+      Object {
+        "path": "/",
+      }
+    }
+  />
   <div
     className="landing-page"
   >
@@ -138,118 +163,136 @@ exports[`LandingPage component renders the component from props 1`] = `
       className="landing-page-container"
     >
       <div>
-        <h2>
+        <h1>
           Live with Intent. Have clarity. Be hyperfocused. Be disciplined. And Achieve your goals.
-        </h2>
+        </h1>
+        <img
+          alt="track and field lanes into the unknown"
+          className="landing-page-image"
+          src="trackField.jpeg"
+        />
       </div>
-      <img
-        alt="track and field lanes into the unknown"
-        className="landing-page-image"
-        src="trackField.jpeg"
-      />
-      <Link
-        to="/user1"
+      <div
+        className="section-break"
       >
-        <button
-          className="try-for-free"
+        <h2>
+          How Relentless Works:
+        </h2>
+        <div>
+          Three easy steps towards achieivng more!
+        </div>
+        <div
+          className="methodology"
         >
-          Try for Free
-        </button>
-      </Link>
-      <div>
+          <div
+            className="methodology-cards even-section-cards"
+          >
+            <h4>
+              1. Determine Annual Goals
+            </h4>
+            <p>
+              Signup and write down three goals for this calendar year. Keep the "SMART" concept in mind - Specific, Measurable, Attainable, Relevant, and Time-based.
+            </p>
+          </div>
+          <div
+            className="methodology-cards even-section-cards"
+          >
+            <h4>
+              2. Set Micro-Goals
+            </h4>
+            <p>
+              Think through the smaller goals that you need to achieve both monthly and weekly to make the annual goal reachable. A good general rule is to have 1 monthly and weekly goal for each of your annual goals.
+            </p>
+          </div>
+          <div
+            className="methodology-cards even-section-cards"
+          >
+            <h4>
+              3. Monitor Progress
+            </h4>
+            <p>
+              Note your progress as you meet and exceed your weekly, monthly, and annual goals. Remember to pat yourself on the back as you go!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="section-break"
+      >
         <h2>
           Our Three Pillars
         </h2>
-      </div>
-      <div>
-        We strive to help you achieve your goals by focusing on three factors.
-      </div>
-      <div
-        className="methodology"
-      >
+        <div>
+          We strive to help you achieve your goals by focusing on three factors.
+        </div>
         <div
-          className="methodology-cards"
-          name="clarity"
-          onClick={[Function]}
+          className="methodology"
         >
-          <h3
+          <div
+            className="methodology-cards"
             name="clarity"
             onClick={[Function]}
           >
-            Clarity
-          </h3>
-          <p
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            Know the destinations (i.e. setting the goals) is an important step of the process
-          </p>
-        </div>
-        <div
-          className="methodology-cards"
-          name="hyperfocus"
-          onClick={[Function]}
-        >
-          <h3
+            <h4
+              name="clarity"
+            >
+              Clarity
+            </h4>
+            <p>
+              Know the destinations (i.e. setting the goals) is an important step of the process
+            </p>
+          </div>
+          <div
+            className="methodology-cards"
             name="hyperfocus"
             onClick={[Function]}
           >
-            Hyperfocus
-          </h3>
-          <p
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            Determine which three goals are the top priorities right now to focus our precious time and energy
-          </p>
-        </div>
-        <div
-          className="methodology-cards"
-          name="discipline"
-          onClick={[Function]}
-        >
-          <h3
+            <h4
+              name="hyperfocus"
+            >
+              Hyperfocus
+            </h4>
+            <p>
+              Determine which three goals are the top priorities right now to focus our precious time and energy
+            </p>
+          </div>
+          <div
+            className="methodology-cards"
             name="discipline"
             onClick={[Function]}
           >
-            Discipline
-          </h3>
-          <p
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            Transformation requires presistent effort - breaking goals down into actionable pieces drives change
-          </p>
+            <h4
+              name="discipline"
+            >
+              Discipline
+            </h4>
+            <p>
+              Transformation requires presistent effort - breaking goals down into actionable pieces drives change
+            </p>
+          </div>
         </div>
       </div>
-      <div>
+      <div
+        className="section-break"
+      >
         <h2>
           Let's reach new heights together!
         </h2>
-      </div>
-      <img
-        alt="Relentless Logo"
-        className="landing-page-image"
-        src="new-heights.jpeg"
-      />
-      <Link
-        to="/user1"
-      >
-        <button
-          className="try-for-free"
+        <img
+          alt="Relentless Logo"
+          className="landing-page-image"
+          src="new-heights.jpeg"
+        />
+        <Link
+          to="/user1"
         >
-          Try for Free
-        </button>
-      </Link>
+          <button
+            className="try-for-free"
+          >
+            Try for Free
+          </button>
+        </Link>
+      </div>
     </div>
   </div>
   <PageFooter />

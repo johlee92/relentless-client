@@ -16,7 +16,13 @@ exports[`PageNav component renders the component by default 1`] = `
       Relentless
     </Link>
   </section>
-  <section>
+  <section
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  >
     <Link
       to="/user1"
     >
@@ -46,7 +52,13 @@ exports[`PageNav component renders the component from props 1`] = `
       Relentless
     </Link>
   </section>
-  <section>
+  <section
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  >
     <Link
       to="/user1"
     >
